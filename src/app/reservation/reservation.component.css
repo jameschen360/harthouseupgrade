@@ -1,0 +1,7 @@
+.reserve-pic {
+    background: url("https://s3.us-east-2.amazonaws.com/harthouse/Kyle+standing.jpg") no-repeat center 0 fixed;
+}
+  
+/deep/ .mat-fab.mat-primary, .mat-mini-fab.mat-primary, .mat-raised-button.mat-primary {
+    background-color: #a87341;
+}

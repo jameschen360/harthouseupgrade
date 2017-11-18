@@ -1,0 +1,83 @@
+<!-- Intro Block
+      ============================================-->
+<section class="intro-block intro-page boxed-section voucher-pic overlay-dark-m">
+
+  <!-- Container -->
+  <div class="container">
+    <!-- Section Title -->
+    <div class="section-title invert-colors no-margin-b">
+      <h2>
+        <font class="italiancustom" size="20">Gift Voucher</font>
+      </h2>
+    </div>
+    <!-- /Section Title -->
+  </div>
+  <!-- /Container -->
+
+</section>
+<!-- /Intro Block
+          ============================================-->
+
+<!-- Content Block
+          ============================================-->
+<section class="content-block default-bg">
+  <!-- Container -->
+  <div class="container cont-pad-t-sm">
+    <div class="box pull-left" style="margin-bottom:25px;">
+      <div class="ribbon">
+        <span>Voucher</span>
+      </div>
+      <div class="panel-body text-center">
+
+        <!-- Row -->
+        <div class="row">
+
+          <!-- Main Col -->
+          <div class="main-col">
+            <h1>Hart House Wine and Tapa</h1>
+            <p></p>
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+              <input type="hidden" name="cmd" value="_xclick">
+              <input type="hidden" name="business" value="rotoredneck@gmail.com">
+              <input type="hidden" name="item_name" value="HHWT Gift Certificate">
+              <input type="hidden" name="item_number" value="2015-GC">
+              <input type="hidden" name="currency_code" value="CAD">
+              <div class="form-group">
+                <label for="fullname1" class="control-label">Gift Certificate Destination Name:</label>
+                <input type="hidden" name="on1" value="Gift To" maxlength="200">
+                <input type="text" class="form-control" id="fullname1" name="os1" placeholder="John Doe" required="true">
+              </div>
+              <div class="form-group">
+                <label for="youremail" class="control-label">Gift Certificate Destination Email Address:</label>
+                <input type="email" class="form-control" id="theiremail" name="custom" placeholder="their@email.com" required="true">
+              </div>
+              <div class="form-group">
+                <label for="amount" class="control-label">Amount (CAD):</label>
+                <select class="form-control" id="amount" name="amount" data-toggle="tooltip" data-placement="bottom" title="*With every purchase of a gift voucher an activation fee will be applied.">
+
+                </select>
+              </div>
+              <button mat-raised-button color="primary">Check Out With PayPal or Credit Card</button>
+            </form>
+            <!-- /Main Col -->
+            <!-- /Row -->
+
+          </div>
+          <br/>
+          <!-- /Container -->
+
+        </div>
+      </div>
+    </div>
+    <p></p>
+    <div class="text-center">
+      <p>
+        <br>Have a Gift Voucher? You can check your balance here!</p>
+        <button mat-raised-button color="primary">Check Balance</button>
+    </div>
+
+  </div>
+</section>
+<br/>
+<!-- /Content Block
+        ============================================-->

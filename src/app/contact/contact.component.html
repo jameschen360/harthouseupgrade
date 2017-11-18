@@ -1,0 +1,94 @@
+<section class="content-block default-bg">
+  <!-- Container -->
+  <div class="container no-pad-t">
+
+    <!-- Row -->
+    <div class="row">
+      <!-- Side Col -->
+      <div class="col-sm-4 col-md-4">
+
+        <!-- Side Widget -->
+        <div class="side-widget">
+
+          <h5 class="boxed-title">
+            <font class="flam-font">Our Location</font>
+          </h5>
+          <!-- vlinks -->
+          <ul class="vlinks vlinks-iconed vlinks-ruled-dots">
+            <li>
+              <i class="icon ti-home custom_round_time"></i>
+              <?echo $address;?>
+            </li>
+            <li class="centered">
+              <i class="icon ti-email custom_round_time"></i>
+              <?echo $email;?>
+            </li>
+            <li>
+              <i class="icon ti-themify-favicon custom_round_time"></i>
+              <?echo $phone;?>
+            </li>
+          </ul>
+          <!-- /vlinks -->
+
+        </div>
+        <!-- /Side Widget -->
+
+      </div>
+      <!-- /Side Col -->
+      <!-- Main Col -->
+      <div id="main-col" class="col-sm-8 col-md-8 mgb-30-xs">
+
+        <h4>
+          <font class="flam-font">Contact Us</font>
+        </h4>
+
+        <p>
+          <?echo $blurb;?>
+        </p>
+
+        <!-- Comment Form -->
+        <div id="errmsg"></div>
+        <form class="contact" name="contact">
+
+
+          <div class="form-group">
+            <label for="fullname" class="control-label">Full Name:</label>
+            <input type="text" class="form-control" id="fullname" name="fullname" placeholder="John Doe">
+          </div>
+
+          <div class="form-group">
+            <label for="youremail" class="control-label">Your Email:</label>
+            <input type="email" class="form-control" id="youremail" name="email" placeholder="john.doe@example.com">
+          </div>
+
+          <div class="form-group">
+            <label for="reason" class="control-label">Reason of Contact:</label>
+            <select class="form-control" id="reason" name="reason">
+              <option>General Inquiries</option>
+              <option>Profession Contacts</option>
+              <option>Website Technical</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">Message:</label>
+            <textarea class="form-control" id="message-text" name="message" rows="8" placeholder="Write your question here..."></textarea>
+          </div>
+        </form>
+
+        <div class="text-right">
+          <button mat-raised-button color="primary">Send Message!</button>
+        </div>
+        <!-- /Contact Form -->
+
+      </div>
+      <!-- /Main Col -->
+
+
+
+    </div>
+    <!-- /Row -->
+
+  </div>
+  <!-- /Container -->
+</section>
+<br/>
