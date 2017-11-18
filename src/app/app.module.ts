@@ -18,6 +18,8 @@ import { CweventComponent } from './cwevent/cwevent.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { VoucherComponent } from './voucher/voucher.component';
 import { ContactComponent } from './contact/contact.component';
+import { AgmCoreModule } from '@agm/core';
+import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,11 @@ import { ContactComponent } from './contact/contact.component';
     AppRoutingModule,
     NgxGalleryModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCpguT_F2VwBtCXyAEumijhzAoJ4f7HHwQ'
+    }),
+    AgmSnazzyInfoWindowModule
 
   ],
   providers: [],

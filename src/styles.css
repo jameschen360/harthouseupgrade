@@ -6926,3 +6926,7 @@ hr {
   font-family: 'flam';
   font-size: 9pt;
 }
+
+.form-control {
+  font-size: 19px !important;
+}

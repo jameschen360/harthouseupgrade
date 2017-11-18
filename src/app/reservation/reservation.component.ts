@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+declare var $;
+
 @Component({
   selector: 'app-reservation',
   templateUrl: './reservation.component.html',
@@ -10,6 +12,7 @@ export class ReservationComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    $('#date-format').bootstrapMaterialDatePicker({ format : 'dddd DD MMMM YYYY - HH:mm' });
   }
 
 }

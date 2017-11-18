@@ -3,5 +3,41 @@
 }
   
 /deep/ .mat-fab.mat-primary, .mat-mini-fab.mat-primary, .mat-raised-button.mat-primary {
-    background-color: #a87341;
+    background-color: #a57f44bd;
 }
+
+/deep/ .dtp>.dtp-content>.dtp-date-view>header.dtp-header {
+    background: #88632abd;
+    color: #fff;
+    text-align: center;
+    padding: .3em;
+}
+
+/deep/ .dtp div.dtp-date, .dtp div.dtp-time {
+    background: #6b4b1abd;
+    text-align: center;
+    color: #fff;
+    padding: 10px;
+}
+
+/deep/ .dtp .p10>a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/deep/ .dtp div.dtp-actual-year {
+    font-size: 1.5em;
+    color: #ffffff;
+}
+
+/deep/ .dtp table.dtp-picker-days tr>td>a.selected {
+    background: #af8b4e;
+    color: #fff;
+}
+
+/deep/ .circle {
+    stroke-width: 59;
+    stroke-linecap: round;
+    background: #af8b4e;
+}
+
