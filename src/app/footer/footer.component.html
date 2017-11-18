@@ -18,12 +18,6 @@
 
 </section>
 
-
-<style>
-  iframe.twitter-timeline {
-    height: 50px !important;
-  }
-</style>
 <!-- Footer
                     =================================================== -->
 <footer class="footer-block">
@@ -40,31 +34,22 @@
         <div class="row-fluid">
           <div class="col-lg-6" style="padding-bottom:20px;">
             <h5>
-              <b>
-                <span class="flam-font-18">We are Social!</span>
-              </b>
+              <span class="flam-font-18">We are Social!</span>
             </h5>
 
             <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/HartHouseAB" data-widget-id="650404791487623168" data-chrome="nofooter noborders"
-              height="320px">Tweets by @HartHouseAB</a>
+              height="280px">Tweets by @HartHouseAB</a>
           </div>
           <!-- /Col -->
 
           <!-- Col -->
-          <div class="col-lg-6 newsletter">
+          <div class="col-lg-6">
             <h5>
-              <b>
-                <span class="flam-font-18">Hours of Operation</span>
-                <p>
-                  nom nom nom
-                </p>
-              </b>
+              <p class="flam-font-18">Hours of Operation</p>
             </h5>
-
+            <div [innerHTML]="hoursOfOperation"></div>
           </div>
           <!-- /Col -->
-
-
         </div>
         <!-- /Row -->
 
@@ -85,17 +70,17 @@
       <div class="row">
         <ul class="hlinks">
           <li>
-            <a href="<?echo $facebook;?>">
+            <a href="https://www.facebook.com/HartHouseWineandTapa">
               <i class="icon fa fa-facebook fa-2x"></i>
             </a>
           </li>
           <li>
-            <a href="<?echo $instagram;?>">
+            <a href="https://instagram.com/explore/locations/1018958838/">
               <i class="icon fa fa-instagram fa-2x"></i>
             </a>
           </li>
           <li>
-            <a href="<?echo $twitter;?>">
+            <a href="https://twitter.com/HartHouseAB">
               <i class="icon fa fa-twitter fa-2x"></i>
             </a>
           </li>

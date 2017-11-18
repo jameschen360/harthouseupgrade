@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FrontFetchService } from '../server/front-fetch.service';
 
 @Component({
   selector: 'app-footer',
@@ -6,10 +7,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
-
-  constructor() { }
+  postData = {
+    'user_id': 'public'
+  };
+  public responseData;
+  public hoursOfOperation;
+  constructor(public getData: FrontFetchService) {
+    this.getHoursOfOperation();
+  }
 
   ngOnInit() {
   }
 
+  getHoursOfOperation() {
+    this.getData.postData(this.postData, 'hoursOfOperation').then((result) => {
+      this.responseData = result;
+      this.hoursOfOperation = this.responseData.hoursOfOperation[0].content;
+    }, (err) => {
+    });
+  }
 }

@@ -1,38 +1,27 @@
 <!-- Intro Block
         ============================================ -->
 <div class="intro-block" style="padding-top: 20px;">
-
     <!-- Container -->
-    <div class="container">
-
+    <div class="container" style="position:relative">
+        <ngx-loading [show]="bannerLoading" [config]="{ backdropBorderRadius: '2px' }"></ngx-loading>
         <div class="slider">
-            <div>
-                <img src="https://s3.us-east-2.amazonaws.com/harthouse/test.jpg" alt="">
+            <div *ngFor="let bannerImage of bannerImages">
+                <img src="{{ bannerImage.url }}" alt="">
             </div>
-            <div>I am another slide.</div>
         </div>
-
     </div>
     <!-- /Container -->
 
 </div>
-<!-- /Intro Block
-                                                                ============================================ -->
+<!-- /Intro Block============================================ -->
 <hr class="style-seven">
 <div class="row" style="padding:0% 5% 0% 5%">
     <div class="col-md-8">
-        <div class="js-video [vimeo, widescreen]">
-            <iframe width="640" height="360" src="//www.youtube.com/embed/lpEBAagmw3o" frameborder="0" allowfullscreen></iframe>
-        </div>
+        <div class="js-video [vimeo, widescreen]" [innerHTML]="iframe_html"></div>
     </div>
     <div class="col-md-4">
-        <h1 class="flam-font-28">This is a title</h1>
-        <p>Essentially what Blake is struggling with here is the "columns of equal height" problem. You can either have elements
-            that are relative to their content or you can set a static height. Either way is not ideal, especially when all
-            Blake wants to do is "fill the screen" The solution is "faux columns". Plainly put, columns that look like columns
-            just because of a background image. Then just leave your sidebar with a transparent background and let it grow
-            however it needs to.
-        </p>
+        <h1 class="flam-font-28">{{ title }}</h1>
+        <p class="flam-font-15">{{ contentText }}</p>
     </div>
 
 </div>
