@@ -1,3 +1,7 @@
 .gallery-pic {
     background: url("https://s3.us-east-2.amazonaws.com/harthouse/Kyle+standing.jpg") no-repeat center 0 fixed;
 }
+
+/deep/ .ngx-gallery-image {
+    z-index: 100 !important;
+}

@@ -1,13 +1,12 @@
 <!-- Intro Block
         ============================================-->
-<section class="intro-block intro-page boxed-section aboutus-pic overlay-dark-m">
-
+<section class="intro-block intro-page boxed-section overlay-dark-m" [ngStyle]="{'background': '#fff url(' + parrallaxUrl + ') no-repeat center 0 fixed'}">
   <!-- Container -->
   <div class="container">
     <!-- Section Title -->
     <div class="section-title invert-colors no-margin-b">
       <h2>
-        <font class="italiancustom" size="20">About Us</font>
+        <font class="parallax-font">About Us</font>
       </h2>
     </div>
     <!-- /Section Title -->
@@ -56,11 +55,7 @@
 
         <!-- Post -->
         <article class="blog-entry text-center">
-
-          <font class="flam-font" size="7">
-            <?echo $content;?>
-          </font>
-
+          <div [innerHTML]="aboutUsContent" class="aboutus-content col-md-12"></div>
         </article>
         <!-- Post /END -->
 

@@ -1,3 +1,10 @@
-.aboutus-pic {
-  background: url("https://s3.us-east-2.amazonaws.com/harthouse/parralax/Kyle+standing.jpg") no-repeat center 0 fixed;
+/deep/ .parallax-font { 
+    font-family: 'Niconne', cursive;
+    font-size: 65px;
+    word-spacing: 3px;
+}
+
+/deep/ p, .aboutus-content {
+    font-family: 'Text Me One', sans-serif;
+    font-size: 18px;
 }

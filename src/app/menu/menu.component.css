@@ -1,3 +1,14 @@
-.menu-pic {
-    background: url("https://s3.us-east-2.amazonaws.com/harthouse/Kyle+standing.jpg") no-repeat center 0 fixed;
+/deep/ .parallax-font { 
+    font-family: 'Niconne', cursive;
+    font-size: 65px;
+    word-spacing: 3px;
+}
+
+.menu-tab-font {
+    font-family: 'Text Me One', sans-serif;
+    font-size: 17px;
+}
+
+p, ul, ol, dt, blockquote, figure, pre, table, fieldset {
+    margin: 0px 0 -4px 0;
 }

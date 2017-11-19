@@ -1,0 +1,9 @@
+/deep/ p {
+    font-family: 'Text Me One', sans-serif;
+    font-size: 18px;
+}
+/deep/ h1 {
+    font-family: 'Text Me One', sans-serif;
+    font-size: 39px;
+    text-shadow: 2px 2px 2px #aaa;
+}

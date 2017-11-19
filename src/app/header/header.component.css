@@ -1,0 +1,11 @@
+.nav-font { 
+    font-family: 'Rancho', cursive;
+    font-size: 26px;
+    /* text-shadow: 1px 1px 1px #aaa; */
+}
+
+/deep/ .nav-font-mobile { 
+    font-family: 'Text Me One', sans-serif;
+    font-size: 24px;
+    padding-top: 1px;
+}

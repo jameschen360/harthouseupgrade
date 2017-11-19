@@ -1,4 +1,8 @@
-<agm-map [latitude]="lat" [longitude]="lng" [styles]="styles" [zoom]="zoom">
+<agm-map [latitude]="lat" [longitude]="lng" [styles]="styles" [zoom]="zoom" 
+        [disableDefaultUI]="true"
+        [zoomControl]="false"
+        [streetViewControl]="false"
+        [scrollwheel]="false">
   <agm-marker [latitude]="lat" [longitude]="lng">
   </agm-marker>
 </agm-map>

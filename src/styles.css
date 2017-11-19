@@ -1,6 +1,10 @@
 @import url("../fonts/themify/themify-icons.css");
 @import url("../fonts/font-awesome/font-awesome.min.css");
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url('https://fonts.googleapis.com/css?family=Text+Me+One');
+@import url('https://fonts.googleapis.com/css?family=Niconne');
+
+@import url('https://fonts.googleapis.com/css?family=Rancho');
 
 
 .font-font-awesome {
@@ -11,14 +15,9 @@
   font-family: "themify";
 }
 
-
 @font-face {
   font-family: 'italian';
   src: url('../fonts/Italianno-Regular.ttf');
-}
-
-.italiancustom {
-	font-family:'italian';
 }
 
 @font-face {
@@ -27,8 +26,8 @@
 }
 
  p, label, input, span, ul, h5, textarea, select{
-	 font-family:'flam';
-	 font-size:15pt;
+   font-family: 'Text Me One', sans-serif;
+	 font-size:13pt;
  }
  .flam-font {
 	 font-family:'flam';
@@ -1774,7 +1773,7 @@ input[type="checkbox"] {
 }
 .hnav .container {
   position: relative;
-  z-index: 200;
+  z-index: 4000;
 }
 .hnav .navbar-right {
   margin-left: 15px;
