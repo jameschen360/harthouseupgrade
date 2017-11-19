@@ -1,11 +1,18 @@
 .nav-font { 
-    font-family: 'Rancho', cursive;
-    font-size: 26px;
+    font-family: 'Montaga', serif;
+    font-size: 20px;
     /* text-shadow: 1px 1px 1px #aaa; */
 }
 
 /deep/ .nav-font-mobile { 
-    font-family: 'Text Me One', sans-serif;
+    font-family: 'Montaga', serif;
     font-size: 24px;
     padding-top: 1px;
 }
+
+/deep/  @media (max-width: 991px) {
+    .hnav.nav-bottom .navbar-collapse .navbar-nav > li > a {
+        padding: 0 9px;
+    }
+}
+

@@ -1,13 +1,15 @@
-/deep/ iframe.twitter-timeline {
+iframe.twitter-timeline {
   height: 300px !important;
 }
 
-/deep/ .footer-paragraph {
+.footer-paragraph {
   font-family: 'Text Me One', sans-serif;
   font-size: 18px;
+  padding-bottom: 15px;
 }
-/deep/ .footer-title {
-  font-family: 'Text Me One', sans-serif;
+.footer-title {
+  font-family: 'Quicksand', sans-serif;
   font-size: 36px;
-  text-shadow: 2px 2px 2px #aaa;
+  color: #222222;
+  padding-bottom: 34px;
 }

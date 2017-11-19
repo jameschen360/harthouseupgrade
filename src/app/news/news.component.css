@@ -1,25 +1,25 @@
-.news-pic {
-    background: url("https://s3.us-east-2.amazonaws.com/harthouse/Kyle+standing.jpg") no-repeat center 0 fixed;
-}
-
 .news-card {
     width: 100%;
 }
 
 p {
-    font-family: "Times New Roman", Times, serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 18px;
     text-align: left;
+    word-spacing: 2px;
+    padding-left: 8px;
 }
 
 .title {
-    font-family: "Times New Roman", Times, serif;
+    font-family: 'Montaga', serif;
     font-size: 26px;
-    text-align: left;  
+    text-align: left;
+    padding-top: 12px;
 }
 
 .date {
-    font-family: "Times New Roman", Times, serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
     text-align: left;  
+    color: #949494 !important;
 }

@@ -4,8 +4,9 @@
 @import url('https://fonts.googleapis.com/css?family=Text+Me+One');
 @import url('https://fonts.googleapis.com/css?family=Niconne');
 
-@import url('https://fonts.googleapis.com/css?family=Rancho');
+@import url('https://fonts.googleapis.com/css?family=Montaga');
 
+@import url('https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed|Montserrat:500|Quicksand:300|Roboto|Spectral+SC|Tangerine:700');
 
 .font-font-awesome {
   font-family: "FontAwesome";
@@ -25,10 +26,11 @@
   src: url('../fonts/Flamenco-Regular.ttf');
 }
 
- p, label, input, span, ul, h5, textarea, select{
+ /* p, label, input, span, ul, h5, textarea, select{
    font-family: 'Text Me One', sans-serif;
 	 font-size:13pt;
- }
+ } */
+
  .flam-font {
 	 font-family:'flam';
 	 font-size:15pt;

@@ -1,10 +1,11 @@
-/deep/ .parallax-font { 
-    font-family: 'Niconne', cursive;
+.parallax-font { 
+    font-family: 'Tangerine', cursive;
     font-size: 65px;
     word-spacing: 3px;
 }
 
-/deep/ p, .aboutus-content {
-    font-family: 'Text Me One', sans-serif;
-    font-size: 18px;
+/deep/ .aboutus-content {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    word-spacing: 3px;  
 }
