@@ -13,7 +13,7 @@
 </section>
 
 <div style="padding:20px">
-  <div class="text-center" style="padding:15px;">
+  <div class="text-center" style="padding:15px; background-color: #f1eded;">
     <mat-card class="news-card" style="padding-top:13px;">
       <mat-card-header>
         <mat-card-title class="title">Bread and Breakfast!</mat-card-title>
@@ -21,68 +21,40 @@
       </mat-card-header>
       <mat-card-content>
         <p>
-            "Looking for a change of scenery and something unique?"<br/>
-            For our travellers visiting we offer accommodation at the Heritage BNB in 49th St in Camrose. Walking distance from the Hart House!
-            <br/>Check out their web site at <a href="http://www.heritagebnb.com">Heritage BNB</a> to info on the house and what it offers. 
-            Make it a weekend and attend a concert at the Baily theatre or Peter Lougheed. 
+          "Looking for a change of scenery and something unique?"
+          <br/> For our travellers visiting we offer accommodation at the Heritage BNB in 49th St in Camrose. Walking distance
+          from the Hart House!
+          <br/>Check out their web site at
+          <a href="http://www.heritagebnb.com">Heritage BNB</a> to info on the house and what it offers. Make it a weekend and attend a concert at the Baily theatre
+          or Peter Lougheed.
         </p>
       </mat-card-content>
     </mat-card>
   </div>
-  
-  
-  <div class="text-center" style="padding:15px;">
+
+  <div *ngFor="let news of initialNews" class="text-center" style="padding:15px;">
     <mat-card class="news-card" style="padding-top:13px;">
       <mat-card-header>
-        <mat-card-title class="title">Bread and Breakfast!</mat-card-title>
-        <mat-card-title class="date">November 6th 2017, 7:30 PM</mat-card-title>
+        <mat-card-title class="title">{{ news.title }}</mat-card-title>
+        <mat-card-title class="date">{{ news.date }}</mat-card-title>
       </mat-card-header>
       <mat-card-content>
         <p>
-            "Looking for a change of scenery and something unique?"<br/>
-            For our travellers visiting we offer accommodation at the Heritage BNB in 49th St in Camrose. Walking distance from the Hart House!
-            <br/>Check out their web site at <a href="http://www.heritagebnb.com">Heritage BNB</a> to info on the house and what it offers. 
-            Make it a weekend and attend a concert at the Baily theatre or Peter Lougheed. 
+          {{ news.content }}
         </p>
       </mat-card-content>
     </mat-card>
   </div>
+
   <div class="text-center" style="padding:15px;">
-    <mat-card class="news-card" style="padding-top:13px;">
-      <mat-card-header>
-        <mat-card-title class="title">Bread and Breakfast!</mat-card-title>
-        <mat-card-title class="date">Sticky</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <p>
-            "Looking for a change of scenery and something unique?"<br/>
-            For our travellers visiting we offer accommodation at the Heritage BNB in 49th St in Camrose. Walking distance from the Hart House!
-            <br/>Check out their web site at <a href="http://www.heritagebnb.com">Heritage BNB</a> to info on the house and what it offers. 
-            Make it a weekend and attend a concert at the Baily theatre or Peter Lougheed. 
-        </p>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <div class="text-center" style="padding:15px;">
-    <mat-card class="news-card" style="padding-top:13px;">
-      <mat-card-header>
-        <mat-card-title class="title">Bread and Breakfast!</mat-card-title>
-        <mat-card-title class="date">Sticky</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <p>
-            "Looking for a change of scenery and something unique?"<br/>
-            For our travellers visiting we offer accommodation at the Heritage BNB in 49th St in Camrose. Walking distance from the Hart House!
-            <br/>Check out their web site at <a href="http://www.heritagebnb.com">Heritage BNB</a> to info on the house and what it offers. 
-            Make it a weekend and attend a concert at the Baily theatre or Peter Lougheed. 
-        </p>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  
-  <div class="text-center" style="padding:15px;">
-      <button mat-raised-button>More</button>
+    <button mat-raised-button color="primary" (click)="loadMoreNews()" [disabled]="noMoreNews || tempDisable" style="position: relative;">
+      <ngx-loading [show]="buttonLoading" [config]="{ backdropBorderRadius: '1px' }"></ngx-loading>
+      <span *ngIf="noMoreNews">No More News Feeds</span>
+      <span *ngIf="!noMoreNews">
+        <span *ngIf="buttonLoading">.</span>
+        <span *ngIf="!buttonLoading">More</span>
+      </span> 
+    </button>
   </div>
 
 </div>
-

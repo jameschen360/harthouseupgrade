@@ -16,7 +16,7 @@ import { MenuPdfComponent } from './menu/menu-pdf/menu-pdf.component';
 const appRoutes: Routes = [
     { path: '', component: HomeComponent},
     { path: 'aboutus', component: AboutComponent},
-    { path: 'menu', redirectTo: 'menu/menu-pdf/brunch'},
+    { path: 'menu', redirectTo: 'menu/menu-pdf/lunch'},
     { path: 'menu', component: MenuComponent, children: [
        { path: 'menu-pdf/:id', component: MenuPdfComponent }
     ]},

@@ -30,3 +30,6 @@ p {
     word-spacing: 3px;
 }
 
+/deep/ .mat-fab.mat-primary, .mat-mini-fab.mat-primary, .mat-raised-button.mat-primary {
+    background-color: #a57f44bd;
+}

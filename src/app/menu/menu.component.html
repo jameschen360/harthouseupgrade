@@ -25,11 +25,11 @@
 
       <!-- Nav tabs -->
       <ul class="nav nav-tabs nav-tabs-line-bottom line-pcolor nav-tabs-center" role="tablist">
-        <li routerLinkActive="active">
+        <!-- <li routerLinkActive="active">
           <a [routerLink]="['/menu/menu-pdf', 'brunch']">
             <p class="menu-tab-font">Brunch</p>
           </a>
-        </li>
+        </li> -->
         <li routerLinkActive="active">
           <a [routerLink]="['/menu/menu-pdf', 'lunch']">
             <p class="menu-tab-font">Lunch</p>
@@ -47,20 +47,8 @@
         </li>
       </ul>
       <!-- /Nav Tabs -->
-      <router-outlet></router-outlet>
-      <!-- Tab panes -->
-      <!-- <div class="tab-content tab-no-borders">
-        <div class="tab-pane">
-          <div class="row">
-            <div class="col-lg-12">
-              <pdf-viewer [src]="menuDinner" [render-text]="false" style="display: block;"></pdf-viewer>
-            </div>
-          </div>
-          
-        </div>
 
-      </div> -->
-      <!-- /Tab Panes -->
+      <router-outlet></router-outlet>
 
     </div>
     <!-- /Product Tabs -->
