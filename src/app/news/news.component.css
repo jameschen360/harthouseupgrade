@@ -23,3 +23,10 @@ p {
     text-align: left;  
     color: #949494 !important;
 }
+
+.parallax-font { 
+    font-family: 'Tangerine', cursive;
+    font-size: 65px;
+    word-spacing: 3px;
+}
+

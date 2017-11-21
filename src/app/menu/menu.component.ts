@@ -14,6 +14,9 @@ export class MenuComponent implements OnInit {
   public responseData;
   public menus;
   public parrallaxUrl;
+  public menuLunch;
+  public menuDinner;
+  public menuDrinks;
   constructor(public getData: FrontFetchService, private sanitizer: DomSanitizer) {
     this.getBannerImages();
   }
@@ -24,10 +27,7 @@ export class MenuComponent implements OnInit {
   getBannerImages() {
     this.getData.postData(this.postData, 'menuPage').then((result) => {
       this.responseData = result;
-      this.menus = this.responseData.menus;
       this.parrallaxUrl = this.responseData.imagePath;
-
-
     }, (err) => {
     });
   }

@@ -23,6 +23,8 @@ import { VoucherComponent } from './voucher/voucher.component';
 import { HttpModule } from '@angular/http';
 import { LoadingModule } from 'ngx-loading';
 import { EmbedVideo } from 'ngx-embed-video';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { MenuPdfComponent } from './menu/menu-pdf/menu-pdf.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { EmbedVideo } from 'ngx-embed-video';
     CweventComponent,
     ReservationComponent,
     VoucherComponent,
-    ContactComponent
+    ContactComponent,
+    MenuPdfComponent
 
   ],
   imports: [
@@ -52,7 +55,8 @@ import { EmbedVideo } from 'ngx-embed-video';
     }),
     HttpModule,
     LoadingModule,
-    EmbedVideo
+    EmbedVideo,
+    PdfViewerModule
 
   ],
   providers: [

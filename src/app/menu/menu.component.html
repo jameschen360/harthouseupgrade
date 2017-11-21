@@ -25,42 +25,41 @@
 
       <!-- Nav tabs -->
       <ul class="nav nav-tabs nav-tabs-line-bottom line-pcolor nav-tabs-center" role="tablist">
-        <li class="active">
-          <a href="#brunch" data-toggle="tab">
+        <li routerLinkActive="active">
+          <a [routerLink]="['/menu/menu-pdf', 'brunch']">
             <p class="menu-tab-font">Brunch</p>
           </a>
         </li>
-        <li>
-          <a href="#lunch" data-toggle="tab">
+        <li routerLinkActive="active">
+          <a [routerLink]="['/menu/menu-pdf', 'lunch']">
             <p class="menu-tab-font">Lunch</p>
           </a>
         </li>
-        <li>
-          <a href="#dinner" data-toggle="tab">
+        <li routerLinkActive="active">
+          <a [routerLink]="['/menu/menu-pdf', 'dinner']">
             <p class="menu-tab-font">Dinner</p>
           </a>
         </li>
-        <li>
-          <a href="#drinks" data-toggle="tab">
+        <li routerLinkActive="active">
+          <a [routerLink]="['/menu/menu-pdf', 'drinks']">
             <p class="menu-tab-font">Drinks</p>
           </a>
         </li>
       </ul>
       <!-- /Nav Tabs -->
-
+      <router-outlet></router-outlet>
       <!-- Tab panes -->
-      <div class="tab-content tab-no-borders">
-
-        <!-- <div class="tab-pane active" id="{{ menu.tag }}" *ngFor="let menu of menus">
+      <!-- <div class="tab-content tab-no-borders">
+        <div class="tab-pane">
           <div class="row">
             <div class="col-lg-12">
-              <iframe src="http://docs.google.com/gview?url={{ menu.url }}&embedded=true" style="width:100%; height:500px;" frameborder="0"></iframe>
+              <pdf-viewer [src]="menuDinner" [render-text]="false" style="display: block;"></pdf-viewer>
             </div>
           </div>
-        </div> -->
+          
+        </div>
 
-
-      </div>
+      </div> -->
       <!-- /Tab Panes -->
 
     </div>

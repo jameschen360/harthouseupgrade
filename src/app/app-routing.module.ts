@@ -11,11 +11,15 @@ import { MenuComponent } from './menu/menu.component';
 import { NewsComponent } from './news/news.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { VoucherComponent } from './voucher/voucher.component';
+import { MenuPdfComponent } from './menu/menu-pdf/menu-pdf.component';
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent},
     { path: 'aboutus', component: AboutComponent},
-    { path: 'menu', component: MenuComponent},
+    { path: 'menu', redirectTo: 'menu/menu-pdf/brunch'},
+    { path: 'menu', component: MenuComponent, children: [
+       { path: 'menu-pdf/:id', component: MenuPdfComponent }
+    ]},
     { path: 'gallery', component: GalleryComponent},
     { path: 'news', component: NewsComponent},
     { path: 'calendar', component: CalendarComponent},
