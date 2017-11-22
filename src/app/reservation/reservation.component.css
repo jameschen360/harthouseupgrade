@@ -1,7 +1,3 @@
-.reserve-pic {
-    background: url("https://s3.us-east-2.amazonaws.com/harthouse/Kyle+standing.jpg") no-repeat center 0 fixed;
-}
-  
 /deep/ .mat-fab.mat-primary, .mat-mini-fab.mat-primary, .mat-raised-button.mat-primary {
     background-color: #a57f44bd;
 }
@@ -41,3 +37,27 @@
     background: #af8b4e;
 }
 
+/deep/ .dtp .dtp-actual-meridien a.selected {
+    background: #af8b4e;
+    color: #fff;
+}
+.parallax-font { 
+    font-family: 'Tangerine', cursive;
+    font-size: 65px;
+    word-spacing: 3px;
+}
+
+ p, input, span, ul, h5, textarea, select{
+   font-family: 'Text Me One', sans-serif;
+ }
+
+ label, button {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    word-spacing: 1px;  
+}
+
+.harthouse-snackbar {
+    background-color: #947138;
+    color: #ffffff;
+}

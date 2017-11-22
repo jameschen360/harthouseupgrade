@@ -33,3 +33,9 @@ p {
 /deep/ .mat-fab.mat-primary, .mat-mini-fab.mat-primary, .mat-raised-button.mat-primary {
     background-color: #a57f44bd;
 }
+
+button {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    word-spacing: 3px;  
+}
