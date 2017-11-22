@@ -26,7 +26,9 @@ export class GalleryComponent implements OnInit {
   getGalleryImages() {
     this.getData.postData(this.postData, 'galleryImages').then((result) => {
       this.responseData = result;
-      this.galleryImages = this.responseData.galleryImages;
+      this.galleryImages[0].small = this.responseData.galleryImages;
+      // this.galleryImages[0].medium = this.responseData.galleryImages;
+      // this.galleryImages[0].big = this.responseData.galleryImages;
       console.log(this.responseData.galleryImages);
       console.log('hello');
       
