@@ -1,8 +1,13 @@
 import { AgmCoreModule } from '@agm/core';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { EmbedVideo } from 'ngx-embed-video';
 import { NgxGalleryModule } from 'ngx-gallery';
+import { LoadingModule } from 'ngx-loading';
 
 import { AboutComponent } from './about/about.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -15,16 +20,12 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { MaterialModule } from './material.module';
+import { MenuPdfComponent } from './menu/menu-pdf/menu-pdf.component';
 import { MenuComponent } from './menu/menu.component';
 import { NewsComponent } from './news/news.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { FrontFetchService } from './server/front-fetch.service';
 import { VoucherComponent } from './voucher/voucher.component';
-import { HttpModule } from '@angular/http';
-import { LoadingModule } from 'ngx-loading';
-import { EmbedVideo } from 'ngx-embed-video';
-import { PdfViewerModule } from 'ng2-pdf-viewer';
-import { MenuPdfComponent } from './menu/menu-pdf/menu-pdf.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,9 @@ import { MenuPdfComponent } from './menu/menu-pdf/menu-pdf.component';
     HttpModule,
     LoadingModule,
     EmbedVideo,
-    PdfViewerModule
+    PdfViewerModule,
+    ReactiveFormsModule,
+    FormsModule
 
   ],
   providers: [
