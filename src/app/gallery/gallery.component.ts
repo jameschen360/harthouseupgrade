@@ -26,13 +26,38 @@ export class GalleryComponent implements OnInit {
   getGalleryImages() {
     this.getData.postData(this.postData, 'galleryImages').then((result) => {
       this.responseData = result;
+      this.galleryImages = this.responseData.galleryImages[1].url;
+
+      // for (let imageObject of this.responseData.galleryImages) {
+      //   this.galleryImages.push(imageObject.url);
+      // }
+
+
+      for (let i=0; i<this.responseData.galleryImages.length; i++) {
+        //console.log(this.responseData.galleryImages[i].url);
+
+        console.log(this.responseData.galleryImages);
+        this.galleryImages.push({
+          small: this.responseData.galleryImages[i].url,
+          medium: this.responseData.galleryImages[i].url,
+          big: this.responseData.galleryImages[i].url
+        });
+        
+        // this.galleryImages.push({
+          // 'small': this.responseData.galleryImages[i].url,
+          // 'medium': this.responseData.galleryImages[i].url,
+          // 'big': this.responseData.galleryImages[i].url,
+        // });
+
+      }
+      console.log(this.galleryImages);
+
+
       
-      // this.galleryImages[0].small = this.responseData.galleryImages;
       // this.galleryImages[0].medium = this.responseData.galleryImages;
       // this.galleryImages[0].big = this.responseData.galleryImages;
 
-      console.log(this.responseData.galleryImages);
-      console.log('hello');
+
       
       this.galleryLoading = false;
     }, (err) => {
