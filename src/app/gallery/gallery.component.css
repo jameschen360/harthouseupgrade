@@ -1,5 +1,11 @@
 .gallery-pic {
-    background: url("https://s3.us-east-2.amazonaws.com/harthouse/Kyle+standing.jpg") no-repeat center 0 fixed;
+    background: url("https://s3.us-east-2.amazonaws.com/harthouse/gallery/mountain.jpg") no-repeat center 0 fixed;
+}
+
+.parallax-font { 
+    font-family: 'Tangerine', cursive;
+    font-size: 65px;
+    word-spacing: 3px;
 }
 
 /deep/ .ngx-gallery-image {

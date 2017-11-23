@@ -38,9 +38,6 @@ export class GalleryComponent implements OnInit {
       }
       this.galleryImages=this.galleryImages.splice(1,2);
       console.log(this.galleryImages);
-
-
-      
       // this.galleryImages[0].medium = this.responseData.galleryImages;
       // this.galleryImages[0].big = this.responseData.galleryImages;
 
