@@ -8,16 +8,23 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./guest.component.css']
 })
 export class GuestComponent implements OnInit {
-  postData = {
-    'user_id': 'public'
-  };
+  postData: { menuType: string };
+  responseData;
+  url;
 
-  constructor() {
-
+  constructor(public getData: FrontFetchService) {
+    this.getMenuPdf();
   }
 
   ngOnInit() {
   }
 
+  getMenuPdf() {
+    this.getData.postData(this.postData, 'guest').then((result) => {
+      this.responseData = result;
+      this.url = this.responseData.url;
+    }, (err) => {
+    });
+  }
 
 }

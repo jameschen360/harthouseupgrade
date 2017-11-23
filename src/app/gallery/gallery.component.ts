@@ -10,24 +10,22 @@ import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gal
 })
 export class GalleryComponent implements OnInit {
   galleryOptions: NgxGalleryOptions[];
-  //galleryImages: NgxGalleryImage[];
   postData = {
     'user_id': 'public'
   };
   public responseData;
-  //public galleryImages;
   public galleryLoading = false;
 
   constructor(public getData: FrontFetchService) {
     this.getGalleryImages();
   }
-  galleryImages=[{small:'',medium:'',big:'', description:''}];
+  galleryImages = [{ small: '', medium: '', big: '', description: '' }];
 
   getGalleryImages() {
     this.getData.postData(this.postData, 'galleryImages').then((result) => {
       this.responseData = result;
 
-      for (let i=0; i<this.responseData.galleryImages.length; i++) {
+      for (let i = 0; i < this.responseData.galleryImages.length; i++) {
         this.galleryImages.push({
           small: this.responseData.galleryImages[i].url,
           medium: this.responseData.galleryImages[i].url,
@@ -36,13 +34,8 @@ export class GalleryComponent implements OnInit {
         });
 
       }
-      this.galleryImages=this.galleryImages.splice(1,2);
-      console.log(this.galleryImages);
-      // this.galleryImages[0].medium = this.responseData.galleryImages;
-      // this.galleryImages[0].big = this.responseData.galleryImages;
+      this.galleryImages = this.galleryImages.splice(1, 2);
 
-
-      
       this.galleryLoading = false;
     }, (err) => {
       console.log('TOO BAD');
@@ -73,30 +66,6 @@ export class GalleryComponent implements OnInit {
         preview: false
       }
     ];
-
-
-
-    //------ Format for gallery images------//
-    //
-    // this.galleryImages = [
-    //   {
-    //     small: 'https://www.elastic.co/assets/bltada7771f270d08f6/enhanced-buzz-1492-1379411828-15.jpg',
-    //     medium: 'https://www.elastic.co/assets/bltada7771f270d08f6/enhanced-buzz-1492-1379411828-15.jpg',
-    //     big: 'https://www.elastic.co/assets/bltada7771f270d08f6/enhanced-buzz-1492-1379411828-15.jpg'
-    //   },
-    //   {
-    //     small: 'https://www.bmw.ca/content/dam/bmw/common/all-models/4-series/gran-coupe/2017/images-and-videos/images/BMW-4-series-gran-coupe-images-and-videos-1920x1200-04.jpg',
-    //     medium: 'https://www.bmw.ca/content/dam/bmw/common/all-models/4-series/gran-coupe/2017/images-and-videos/images/BMW-4-series-gran-coupe-images-and-videos-1920x1200-04.jpg',
-    //     big: 'https://www.bmw.ca/content/dam/bmw/common/all-models/4-series/gran-coupe/2017/images-and-videos/images/BMW-4-series-gran-coupe-images-and-videos-1920x1200-04.jpg'
-    //   },
-    //   {
-    //     small: 'https://www.elastic.co/assets/bltada7771f270d08f6/enhanced-buzz-1492-1379411828-15.jpg',
-    //     medium: 'https://www.elastic.co/assets/bltada7771f270d08f6/enhanced-buzz-1492-1379411828-15.jpg',
-    //     big: 'https://www.elastic.co/assets/bltada7771f270d08f6/enhanced-buzz-1492-1379411828-15.jpg'
-    //   }
-    // ];
-
-
 
   }
 

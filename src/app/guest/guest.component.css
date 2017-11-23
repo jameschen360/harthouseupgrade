@@ -11,3 +11,7 @@
 p, ul, ol, dt, blockquote, figure, pre, table, fieldset {
     margin: 0px 0 -4px 0;
 }
+.guest-pic {
+    background: url("https://s3.us-east-2.amazonaws.com/harthouse/banner/fish+creek.jpg") no-repeat center 0 fixed;
+}
+
