@@ -2,7 +2,24 @@
     background-color: #a57f44bd;
 }
 
-p, label, input, span, ul, h5, textarea, select{
+.parallax-font { 
+    font-family: 'Tangerine', cursive;
+    font-size: 65px;
+    word-spacing: 3px;
+}
+
+p, input, span, ul, h5, textarea, select, .ribbon-font{
     font-family: 'Text Me One', sans-serif;
-      font-size:13pt;
-  }
+}
+ 
+label, button {
+     font-family: 'Montserrat', sans-serif;
+     font-size: 14px;
+     word-spacing: 1px;  
+}
+
+h1 {
+    font-family: 'Niconne', cursive;
+    font-size: 50px;
+    color: #5f5749;
+}

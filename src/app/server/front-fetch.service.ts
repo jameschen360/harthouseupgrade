@@ -18,7 +18,6 @@ export class FrontFetchService {
           resolve(res.json());
         }, (err) => {
           reject(err);
-          console.log(err)
         });
     });
   }
