@@ -10,7 +10,7 @@ import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gal
 })
 export class GalleryComponent implements OnInit {
   galleryOptions: NgxGalleryOptions[];
-  galleryImages: NgxGalleryImage[];
+  //galleryImages: NgxGalleryImage[];
   postData = {
     'user_id': 'public'
   };
@@ -21,35 +21,22 @@ export class GalleryComponent implements OnInit {
   constructor(public getData: FrontFetchService) {
     this.getGalleryImages();
   }
-
+  galleryImages=[{small:'',medium:'',big:'', description:''}];
 
   getGalleryImages() {
     this.getData.postData(this.postData, 'galleryImages').then((result) => {
       this.responseData = result;
-      this.galleryImages = this.responseData.galleryImages[1].url;
-
-      // for (let imageObject of this.responseData.galleryImages) {
-      //   this.galleryImages.push(imageObject.url);
-      // }
-
 
       for (let i=0; i<this.responseData.galleryImages.length; i++) {
-        //console.log(this.responseData.galleryImages[i].url);
-
-        console.log(this.responseData.galleryImages);
         this.galleryImages.push({
           small: this.responseData.galleryImages[i].url,
           medium: this.responseData.galleryImages[i].url,
-          big: this.responseData.galleryImages[i].url
+          big: this.responseData.galleryImages[i].url,
+          description: ''
         });
-        
-        // this.galleryImages.push({
-          // 'small': this.responseData.galleryImages[i].url,
-          // 'medium': this.responseData.galleryImages[i].url,
-          // 'big': this.responseData.galleryImages[i].url,
-        // });
 
       }
+      this.galleryImages=this.galleryImages.splice(1,2);
       console.log(this.galleryImages);
 
 
