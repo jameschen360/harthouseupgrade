@@ -84,7 +84,7 @@ export class VoucherComponent implements OnInit, AfterViewChecked {
     this.paypalForm.statusChanges.subscribe(
       (value) => {
         if (value === 'INVALID') {
-          console.log('this is invalid');
+          this.isValidForm = false;
         } else if (value === 'VALID') {
           this.isValidForm = true;
           if (!this.didPaypalScriptLoad) {
