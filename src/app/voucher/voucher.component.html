@@ -23,7 +23,8 @@
 <section class="content-block default-bg">
   <!-- Container -->
   <div class="container cont-pad-t-sm">
-    <div class="box pull-left" style="margin-bottom:25px;">
+    <div class="box pull-left" style="margin-bottom:25px; position: relative;">
+        <ngx-loading [show]="buttonLoading" [config]="{ backdropBorderRadius: '1px' }"></ngx-loading>
       <div class="ribbon ribbon-font">
         <span>Voucher</span>
       </div>
@@ -31,11 +32,12 @@
         <div class="row">
           <div class="main-col">
             <h1>Hart House Wine and Tapa</h1>
-            <div style="padding:0% 10% 0% 10%">
+            <!-- Initial submission form -->
+            <div style="padding:0% 10% 0% 10%" *ngIf="!paymentSuccess">
               <form [formGroup]="paypalForm">
                 <div class="form-group">
                   <label for="fullname1" class="control-label">Gift Certificate Destination Name:</label>
-                  <input type="text" class="form-control" id="fullname1" placeholder="John Doe" formControlName="fullName">
+                  <input type="text" class="form-control" id="fullname1" placeholder="Their Name" formControlName="fullName">
                 </div>
                 <div class="form-group">
                   <label for="youremail" class="control-label">Gift Certificate Destination Email Address:</label>
@@ -44,12 +46,21 @@
                 <div class="form-group">
                   <label for="amount" class="control-label">Amount (CAD):</label>
                   <select class="form-control" formControlName="amount">
-                    <option selected disabled>Please select Amount</option>
-                    <option value="50">$50</option>
+                    <option disabled>Please select Amount</option>
+                    <option value="{{ price.amount }}" *ngFor="let price of voucherPrice">{{ price.description }}</option>
                   </select>
                 </div>
-                <div id="paypal-button" *ngIf="isValidForm"></div>
+                <div style="position: relative;">
+                  <div id="paypal-button" *ngIf="isValidForm"></div>
+                </div>
               </form>
+            </div>
+
+            <div style="padding:0% 10% 0% 10%" *ngIf="paymentSuccess">
+              <p>WHy Hello thereand thank you :)</p>
+              <p>{{ authAmount }}</p>
+              <p>{{ authFullName }}</p>
+              <p>{{ authEmail }}</p>
             </div>
           </div>
           <br/>

@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewChecked } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 declare var paypal: any;
@@ -8,7 +8,7 @@ declare var paypal: any;
   templateUrl: './voucher.component.html',
   styleUrls: ['./voucher.component.css']
 })
-export class VoucherComponent implements OnInit, AfterViewChecked {
+export class VoucherComponent implements OnInit {
   // Paypal API START //
   public didPaypalScriptLoad = false;
 
@@ -33,7 +33,7 @@ export class VoucherComponent implements OnInit, AfterViewChecked {
           transactions: [
             {
               amount: {
-                total: '1.00', currency: 'CAD'
+                total: this.paypalForm.value.amount, currency: 'CAD'
               }
             }
           ]
@@ -42,30 +42,42 @@ export class VoucherComponent implements OnInit, AfterViewChecked {
     },
 
     onAuthorize: (data, actions) => {
-      // show success page
-      console.log(data);
-      console.log('----------------------');
-      console.log(actions);
+      const paymentId = data.paymentId;
+      const payerId = data.payerId;
+      const paymentToken = data.paymentToken;
+      this.authAmount = this.paypalForm.value.amount;
+      this.authFullName = this.paypalForm.value.fullName;
+      this.autheEmail = this.paypalForm.value.email;
+
+      //CALL SERVER HTTP AND RETURN generate gift voucher code
+      this.paymentSuccess = true;
     }
   };
 
   paypalForm: FormGroup;
   isValidForm = false;
+  public voucherPrice = [{
+    amount: <number>null,
+    description: <string>null
+  }];
+  public buttonLoading = false;
+  public paymentSuccess = false;
+  public authAmount;
+  public authFullName;
+  public autheEmail;
+
 
   constructor() {
     this.paypalForm = new FormGroup({
       'fullName': new FormControl(null, Validators.required),
-      'email': new FormControl(null, [Validators.required, Validators.pattern('[^ @]*@[^ @]*')]),
+      'email': new FormControl(null, [Validators.required, Validators.pattern(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]),
       'amount': new FormControl(null, Validators.required)
     });
   }
 
   public ngOnInit() {
     this.isValid();
-  }
-
-  public ngAfterViewChecked(): void {
-
+    this.voucherPriceLoop();
   }
 
   public loadPaypalScript(): Promise<any> {
@@ -83,18 +95,38 @@ export class VoucherComponent implements OnInit, AfterViewChecked {
   isValid() {
     this.paypalForm.statusChanges.subscribe(
       (value) => {
+        this.buttonLoading = true;
         if (value === 'INVALID') {
+          this.buttonLoading = false;
           this.isValidForm = false;
+          this.didPaypalScriptLoad = false;
         } else if (value === 'VALID') {
-          this.isValidForm = true;
           if (!this.didPaypalScriptLoad) {
+            this.isValidForm = true;
             this.loadPaypalScript().then(() => {
               paypal.Button.render(this.paypalConfig, '#paypal-button');
             });
           }
+          this.buttonLoading = false;
         }
       }
     );
+  }
+
+  voucherPriceLoop() {
+    this.voucherPrice = this.voucherPrice.splice(1, 2);
+    const maxAmount = 150;
+    for (let i = 50; i <= maxAmount; i += 10) {
+      const amount = i;
+      const activationFee = amount * 0.029 + 0.4;
+      const total = amount + activationFee;
+      this.voucherPrice.push(
+        {
+          amount: total,
+          description: '$' + amount + '+' + activationFee.toFixed(2) + ' Activation Fee'
+        }
+      );
+    }
   }
 
 
