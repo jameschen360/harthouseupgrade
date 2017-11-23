@@ -12,6 +12,7 @@ import { NewsComponent } from './news/news.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { VoucherComponent } from './voucher/voucher.component';
 import { MenuPdfComponent } from './menu/menu-pdf/menu-pdf.component';
+import { GuestComponent } from './guest/guest.component';
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent},
@@ -26,7 +27,9 @@ const appRoutes: Routes = [
     { path: 'cwevent', component: CweventComponent},
     { path: 'reservation', component: ReservationComponent},
     { path: 'voucher', component: VoucherComponent},
-    { path: 'contactus', component: ContactComponent}
+    { path: 'contactus', component: ContactComponent},
+    { path: 'guest', component: GuestComponent},
+
   ];
 
 @NgModule({
