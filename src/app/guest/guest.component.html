@@ -1,0 +1,61 @@
+<section class="intro-block intro-page boxed-section overlay-dark-m" [ngStyle]="{'background': '#fff url(' + parrallaxUrl + ') no-repeat center 0 fixed'}">
+  <!-- Container -->
+  <div class="container">
+    <!-- Section Title -->
+    <div class="section-title invert-colors no-margin-b">
+      <h2>
+        <span class="parallax-font">Our Menu</span>
+      </h2>
+    </div>
+    <!-- /Section Title -->
+  </div>
+  <!-- /Container -->
+
+</section>
+
+<!-- Content Block
+      ============================================ -->
+<div class="content-block">
+
+  <!-- Container -->
+  <div class="container no-pad-t">
+
+    <!-- Product Tabs -->
+    <div class="product-tabs">
+
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs nav-tabs-line-bottom line-pcolor nav-tabs-center" role="tablist">
+        <!-- <li routerLinkActive="active">
+          <a [routerLink]="['/menu/menu-pdf', 'brunch']">
+            <p class="menu-tab-font">Brunch</p>
+          </a>
+        </li> -->
+        <li routerLinkActive="active">
+          <a [routerLink]="['/menu/menu-pdf', 'lunch']">
+            <p class="menu-tab-font">Lunch</p>
+          </a>
+        </li>
+        <li routerLinkActive="active">
+          <a [routerLink]="['/menu/menu-pdf', 'dinner']">
+            <p class="menu-tab-font">Dinner</p>
+          </a>
+        </li>
+        <li routerLinkActive="active">
+          <a [routerLink]="['/menu/menu-pdf', 'drinks']">
+            <p class="menu-tab-font">Drinks</p>
+          </a>
+        </li>
+      </ul>
+      <!-- /Nav Tabs -->
+
+      <router-outlet></router-outlet>
+
+    </div>
+    <!-- /Product Tabs -->
+
+  </div>
+  <!-- /Container -->
+
+</div>
+<!-- /Content Block
+          ============================================ -->

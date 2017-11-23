@@ -1,0 +1,13 @@
+.parallax-font { 
+    font-family: 'Tangerine', cursive;
+    font-size: 65px;
+    word-spacing: 3px;
+}
+.menu-tab-font {
+    font-family: 'Montaga', serif;
+    font-size: 17px;
+}
+
+p, ul, ol, dt, blockquote, figure, pre, table, fieldset {
+    margin: 0px 0 -4px 0;
+}
