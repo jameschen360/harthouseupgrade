@@ -1,0 +1,24 @@
+/deep/ .mat-fab.mat-primary, .mat-mini-fab.mat-primary, .mat-raised-button.mat-primary {
+    background-color: #a57f44bd;
+}
+
+p, input, span, ul, h5, h3, h2, textarea, select, .ribbon-font{
+    font-family: 'Text Me One', sans-serif;
+}
+ 
+label, button {
+     font-family: 'Montserrat', sans-serif;
+     font-size: 14px;
+     word-spacing: 1px;  
+}
+
+h1 {
+    font-family: 'Niconne', cursive;
+    font-size: 50px;
+    color: #5f5749;
+}
+
+.gift-voucher-content {
+    padding-top: 1px;
+    font-size: 20px;
+}

@@ -1,6 +1,6 @@
 <!-- Intro Block
       ============================================-->
-<section class="intro-block intro-page boxed-section voucher-pic overlay-dark-m">
+<section class="intro-block intro-page boxed-section overlay-dark-m" [ngStyle]="{'background': '#fff url(' + parrallaxUrl + ') no-repeat center 0 fixed'}">
 
   <!-- Container -->
   <div class="container">
@@ -60,7 +60,7 @@
               <div class="gift-voucher-content">
                 <h3>Thank you for purchasing our Gift Voucher!</h3>
                 <p>
-                  The receipt has been sent to your email,
+                  The receipt has been sent to your email from PayPal,
                   <strong>
                     <i>
                       {{ senderEmail }}.
@@ -92,7 +92,7 @@
     <div class="text-center">
       <p>
         <br>Have a Gift Voucher? You can check your balance here!</p>
-      <button mat-raised-button color="primary">Check Balance</button>
+      <button mat-raised-button color="primary" (click)="checkBalanceModal()">Check Balance</button>
     </div>
 
   </div>

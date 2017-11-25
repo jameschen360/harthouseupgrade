@@ -27,6 +27,7 @@ import { NewsComponent } from './news/news.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { FrontFetchService } from './server/front-fetch.service';
 import { VoucherComponent } from './voucher/voucher.component';
+import { BalanceModalComponent } from './voucher/balance-modal/balance-modal.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { VoucherComponent } from './voucher/voucher.component';
     ReservationComponent,
     VoucherComponent,
     ContactComponent,
-    MenuPdfComponent
+    MenuPdfComponent,
+    BalanceModalComponent
 
   ],
   imports: [
@@ -66,6 +68,9 @@ import { VoucherComponent } from './voucher/voucher.component';
   ],
   providers: [
     FrontFetchService
+  ],
+  entryComponents: [
+    BalanceModalComponent,
   ],
   bootstrap: [AppComponent]
 })
