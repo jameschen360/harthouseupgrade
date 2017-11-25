@@ -6296,6 +6296,7 @@ ul.tags li a:hover {
    overflow: hidden;
    width: 75px; height: 75px; 
    text-align: right;
+   z-index: 200;
 }
 .ribbon span {
    font-size: 13px;

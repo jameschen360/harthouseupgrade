@@ -24,7 +24,7 @@
   <!-- Container -->
   <div class="container cont-pad-t-sm">
     <div class="box pull-left" style="margin-bottom:25px; position: relative;">
-        <ngx-loading [show]="buttonLoading" [config]="{ backdropBorderRadius: '1px' }"></ngx-loading>
+      <ngx-loading [show]="buttonLoading" [config]="{ backdropBorderRadius: '1px' }"></ngx-loading>
       <div class="ribbon ribbon-font">
         <span>Voucher</span>
       </div>
@@ -36,12 +36,12 @@
             <div style="padding:0% 10% 0% 10%" *ngIf="!paymentSuccess">
               <form [formGroup]="paypalForm">
                 <div class="form-group">
-                  <label for="fullname1" class="control-label">Gift Certificate Destination Name:</label>
-                  <input type="text" class="form-control" id="fullname1" placeholder="Their Name" formControlName="fullName">
+                  <label for="fullname1" class="control-label">Recipient Name:</label>
+                  <input type="text" class="form-control" id="fullname1" placeholder="Recipient Name" formControlName="fullName" autocomplete="off">
                 </div>
                 <div class="form-group">
-                  <label for="youremail" class="control-label">Gift Certificate Destination Email Address:</label>
-                  <input type="email" class="form-control" placeholder="their@email.com" formControlName="email">
+                  <label for="youremail" class="control-label">Recipient Email Address:</label>
+                  <input type="email" class="form-control" placeholder="Recipient Email" formControlName="email">
                 </div>
                 <div class="form-group">
                   <label for="amount" class="control-label">Amount (CAD):</label>
@@ -57,13 +57,32 @@
             </div>
 
             <div style="padding:0% 10% 0% 10%" *ngIf="paymentSuccess">
-              <p>WHy Hello thereand thank you :)</p>
-              <p>{{ authAmount }}</p>
-              <p>{{ authFullName }}</p>
-              <p>{{ authEmail }}</p>
+              <div class="gift-voucher-content">
+                <h3>Thank you for purchasing our Gift Voucher!</h3>
+                <p>
+                  The receipt has been sent to your email,
+                  <strong>
+                    <i>
+                      {{ senderEmail }}.
+                    </i>
+                  </strong>
+                </p>
+
+                <p>
+                  The electronic gift voucher of the amount
+                  <strong>${{ authAmount }}</strong> CAD has been sent to
+                  <strong>
+                    <i>
+                      {{ giftedUserFullName }} ({{ giftedUserEmail }}).
+                    </i>
+                  </strong>
+                </p>
+                <img [src]="giftCodeUrl" alt="">
+                <p>{{ giftCode }}</p>
+              </div>
             </div>
           </div>
-          <br/>
+
           <!-- /Container -->
 
         </div>
@@ -73,7 +92,7 @@
     <div class="text-center">
       <p>
         <br>Have a Gift Voucher? You can check your balance here!</p>
-        <button mat-raised-button color="primary">Check Balance</button>
+      <button mat-raised-button color="primary">Check Balance</button>
     </div>
 
   </div>
