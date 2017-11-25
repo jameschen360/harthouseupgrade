@@ -15,9 +15,11 @@ export class GalleryComponent implements OnInit {
   };
   public responseData;
   public galleryLoading = false;
+  private parrallaxUrl;
 
   constructor(public getData: FrontFetchService) {
     this.getGalleryImages();
+    this.getBannerImages();
   }
   galleryImages = [{ small: '', medium: '', big: '', description: '' }];
 
@@ -39,6 +41,14 @@ export class GalleryComponent implements OnInit {
       this.galleryLoading = false;
     }, (err) => {
       console.log('TOO BAD');
+    });
+  }
+
+  getBannerImages() {
+    this.getData.postData(this.postData, 'galleryPage').then((result) => {
+      this.responseData = result;
+      this.parrallaxUrl = this.responseData.imagePath;
+    }, (err) => {
     });
   }
 

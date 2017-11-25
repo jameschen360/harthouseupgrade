@@ -99,6 +99,7 @@ export class VoucherComponent implements OnInit {
             this.responseData = result;
             this.paymentSuccess = true;
             this.giftCode = this.responseData.giftVoucherCode;
+            console.log(this.giftCode);
             this.giftCodeUrl = this.barcodeUrl + this.giftCode;
             this.buttonLoading = false;
           }, (err) => {

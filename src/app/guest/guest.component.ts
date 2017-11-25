@@ -11,9 +11,11 @@ export class GuestComponent implements OnInit {
   postData: { menuType: string };
   responseData;
   url;
+  private parrallaxUrl;
 
   constructor(public getData: FrontFetchService) {
     this.getMenuPdf();
+    this.getBannerImages();
   }
 
   ngOnInit() {
@@ -23,6 +25,14 @@ export class GuestComponent implements OnInit {
     this.getData.postData(this.postData, 'guest').then((result) => {
       this.responseData = result;
       this.url = this.responseData.url;
+    }, (err) => {
+    });
+  }
+
+  getBannerImages() {
+    this.getData.postData(this.postData, 'guestPage').then((result) => {
+      this.responseData = result;
+      this.parrallaxUrl = this.responseData.imagePath;
     }, (err) => {
     });
   }
