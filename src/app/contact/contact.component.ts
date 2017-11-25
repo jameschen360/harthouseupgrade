@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { FrontFetchService } from '../server/front-fetch.service';
 
 @Component({
   selector: 'app-contact',
@@ -7,6 +8,11 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
+  private parrallaxUrl;
+  postData = {
+    'user_id': 'public'
+  };
+  public responseData;
   lat = 53.01889;
   lng = -112.8245;
   zoom = 15;
@@ -156,9 +162,17 @@ export class ContactComponent implements OnInit {
       ]
     }
   ];
-  constructor() { }
+  constructor(public getData: FrontFetchService) {this.getBannerImages();}
 
   ngOnInit() {
+  }
+
+  getBannerImages() {
+    this.getData.postData(this.postData, 'contactUsPage').then((result) => {
+      this.responseData = result;
+      this.parrallaxUrl = this.responseData.imagePath;
+    }, (err) => {
+    });
   }
 
 }

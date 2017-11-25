@@ -2,7 +2,23 @@
     background-color: #a57f44bd;
 }
 
+.parallax-font { 
+    font-family: 'Tangerine', cursive;
+    font-size: 65px;
+    word-spacing: 3px;
+}
+
 agm-map {
     padding: 15px;
     height: 500px;
   }
+
+  p, input, span, ul, h5, textarea, select{
+    font-family: 'Text Me One', sans-serif;
+  }
+
+  label, button {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    word-spacing: 1px;  
+}
