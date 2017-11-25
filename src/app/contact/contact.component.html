@@ -26,37 +26,7 @@
 
     <!-- Row -->
     <div class="row">
-      <!-- Side Col -->
-      <div class="col-sm-12 col-md-12">
 
-        <!-- Side Widget -->
-        <div class="side-widget">
-
-          <h5 class="boxed-title">
-            <font class="flam-font">Our Location</font>
-          </h5>
-          <!-- vlinks -->
-          <ul class="vlinks vlinks-iconed vlinks-ruled-dots">
-            <li>
-              <i class="icon ti-home custom_round_time"></i>
-              <?echo $address;?>
-            </li>
-            <li class="centered">
-              <i class="icon ti-email custom_round_time"></i>
-              <?echo $email;?>
-            </li>
-            <li>
-              <i class="icon ti-themify-favicon custom_round_time"></i>
-              <?echo $phone;?>
-            </li>
-          </ul>
-          <!-- /vlinks -->
-
-        </div>
-        <!-- /Side Widget -->
-
-      </div>
-      <!-- /Side Col -->
       <!-- Main Col -->
       <div id="main-col" class="col-sm-12 col-md-12 mgb-30-xs">
 
@@ -113,6 +83,42 @@
 
     </div>
     <!-- /Row -->
+
+      <!-- Side Col -->
+      <div class="col-sm-12 col-md-12" style="padding:50px 200px 0px 200px">
+        
+                <!-- Side Widget -->
+                <div class="side-widget">
+        
+                  <h5 class="boxed-title">
+                    <font class="flam-font">Our Location</font>
+                  </h5>
+                  <!-- vlinks -->
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4"  style="text-align: center;">
+                      <i class="icon ti-home custom_round_time"></i>
+                      <?echo $address;?>
+                    </div>
+
+                    <div class="col-sm-4 col-md-4 col-lg-4"  style="text-align: center;">
+                      <i class="icon ti-email custom_round_time"></i>
+                      <?echo $email;?>
+                    </div>
+
+                    <div class="col-sm-4 col-md-4 col-lg-4"  style="text-align: center;">
+                      <i class="icon ti-themify-favicon custom_round_time"></i>
+                      <?echo $phone;?>
+                    </div>
+                  </div>
+
+                  <!-- /vlinks -->
+        
+                </div>
+                <!-- /Side Widget -->
+        
+              </div>
+              <!-- /Side Col -->
+
 
   </div>
   <!-- /Container -->
