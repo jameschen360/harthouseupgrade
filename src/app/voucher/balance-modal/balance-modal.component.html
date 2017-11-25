@@ -1,0 +1,19 @@
+<div class="text-center" style="padding:20px;">
+  <h2>Enter Your Gift Voucher Code</h2>
+  <div class="row">
+    <form class="contact" name="contact">
+      <div class="form-group">
+        <label for="card_balance" class="control-label">Gift Voucher Code:</label>
+        <input #voucherCode type="text" class="form-control text-center col-lg-6" id="code" name="code" placeholder="XXXX-XXXX-XXXX-XXXX"
+          required="true" style="text-transform: uppercase;" autocomplete="off">
+      </div>
+    </form>
+
+  </div>
+  <br>
+  <div class="row" *ngIf="searchField">
+    <img [src]="giftCodeUrl" alt="">
+    <h3>${{ amount }}</h3>
+  </div>
+  <button mat-raised-button color="primary" (click)="checkBalance(voucherCode)">Check Balance</button>
+</div>

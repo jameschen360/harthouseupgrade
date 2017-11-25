@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+
 import { FrontFetchService } from '../server/front-fetch.service';
+import { BalanceModalComponent } from './balance-modal/balance-modal.component';
 
 declare var paypal: any;
 
@@ -41,6 +44,7 @@ export class VoucherComponent implements OnInit {
   public giftCodeUrl;
   public giftCode;
   public senderEmail;
+  public parrallaxUrl;
   public barcodeUrl = 'https://harthousewineandtapa.com/angularServices/barcode/barcode.php?codetype=Code128&size=50&text=';
 
   public paypalConfig: any = {
@@ -108,15 +112,20 @@ export class VoucherComponent implements OnInit {
         });
 
       });
-
     }
   };
 
-  constructor(public getData: FrontFetchService) {
+  constructor(public getData: FrontFetchService, public dialog: MatDialog) {
     this.paypalForm = new FormGroup({
       'fullName': new FormControl(null, Validators.required),
       'email': new FormControl(null, [Validators.required, Validators.pattern(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]),
       'amount': new FormControl(null, Validators.required)
+    });
+
+    this.getData.postData(this.postData, 'voucherContent').then((result) => {
+      this.responseData = result;
+      this.parrallaxUrl = this.responseData.imagePath;
+    }, (err) => {
     });
   }
 
@@ -172,6 +181,19 @@ export class VoucherComponent implements OnInit {
         }
       );
     }
+  }
+
+  checkBalanceModal() {
+    const dialogRef = this.dialog.open(BalanceModalComponent, {
+      width: '500px',
+      data: { }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      // do something if modal clses
+    });
+
+
   }
 
 
