@@ -1,4 +1,4 @@
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FrontFetchService } from '../../server/front-fetch.service';
 
@@ -12,7 +12,7 @@ export class MenuPdfComponent implements OnInit {
   responseData;
   url;
 
-  constructor(private route: ActivatedRoute, public getData: FrontFetchService) {
+  constructor(private route: ActivatedRoute, public getData: FrontFetchService, public router: Router) {
     this.postData =  {
       menuType: this.route.snapshot.params['id']
     };
@@ -32,7 +32,11 @@ export class MenuPdfComponent implements OnInit {
   getMenuPdf() {
     this.getData.postData(this.postData, 'menuPDF').then((result) => {
       this.responseData = result;
-      this.url = this.responseData.url;
+      if (this.responseData.msg === 'error') {
+        this.router.navigate(['/error']);
+      } else {
+        this.url = this.responseData.url;
+      }
     }, (err) => {
     });
   }
