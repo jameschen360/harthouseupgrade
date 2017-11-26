@@ -167,7 +167,7 @@ export class VoucherComponent implements OnInit {
   }
 
   voucherPriceLoop() {
-    this.voucherPrice = this.voucherPrice.splice(1, 2);
+    this.voucherPrice = this.voucherPrice.splice(1);
     const maxAmount = 250;
     const minAmount = 50;
     for (let i = minAmount; i <= maxAmount; i += 50) {

@@ -15,7 +15,7 @@ export class GalleryComponent implements OnInit {
   };
   public responseData;
   public galleryLoading = false;
-  private parrallaxUrl;
+  public parrallaxUrl;
 
   constructor(public getData: FrontFetchService) {
     this.getGalleryImages();

@@ -11,7 +11,7 @@ export class GuestComponent implements OnInit {
   postData: { menuType: string };
   responseData;
   url;
-  private parrallaxUrl;
+  public parrallaxUrl;
 
   constructor(public getData: FrontFetchService) {
     this.getMenuPdf();
