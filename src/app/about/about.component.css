@@ -20,4 +20,9 @@ h1 {
     font-family: 'Montserrat', sans-serif !important;
     font-size: 32px !important;
     color: #5f5749 !important;
+
+}
+
+/deep/ h1 {
+    line-height: 1.1em !important;
 }
