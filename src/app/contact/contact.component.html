@@ -11,11 +11,8 @@
   </div>
 </section>
 
-<agm-map [latitude]="lat" [longitude]="lng" [styles]="styles" [zoom]="zoom" 
-        [disableDefaultUI]="true"
-        [zoomControl]="false"
-        [streetViewControl]="false"
-        [scrollwheel]="false">
+<agm-map [latitude]="lat" [longitude]="lng" [styles]="styles" [zoom]="zoom" [disableDefaultUI]="true" [zoomControl]="false"
+  [streetViewControl]="false" [scrollwheel]="false">
   <agm-marker [latitude]="lat" [longitude]="lng">
   </agm-marker>
 </agm-map>
@@ -29,96 +26,102 @@
 
       <!-- Main Col -->
       <div id="main-col" class="col-sm-12 col-md-12 mgb-30-xs">
+        <!-- Side Col -->
+        <div class="col-sm-12 col-md-12">
+          <!-- Side Widget -->
+          <div class="side-widget">
+            <!-- vlinks -->
+            <div class="row contact-us-font">
+              <div class="col-sm-4 col-md-4 col-lg-4" style="text-align: center;">
+                <i class="fa fa-home fa-2x"></i>
+                <div class="row contact-us-block">
+                  <span [innerHTML]="addressHTML"></span>
+                </div>
+              </div>
 
-        <h2 style="text-align: center;">
-          <font class="flam-font">Contact Us</font>
-        </h2>
+              <div class="col-sm-4 col-md-4 col-lg-4" style="text-align: center;">
+                <i class="fa fa-envelope fa-2x"></i>
+                <div class="row contact-us-block">
+                  <span [innerHTML]="emailHTML"></span>
+                </div>
+              </div>
 
-        <p  style="text-align: center;">
-          We are happy to anwser any inquiries regarding our services!
-        </p>
+              <div class="col-sm-4 col-md-4 col-lg-4" style="text-align: center;">
+                <i class="fa fa-phone fa-2x"></i>
+                <div class="row contact-us-block">
+                  <span [innerHTML]="phoneHTML"></span>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <!-- /vlinks -->
 
-        <!-- Comment Form -->
-        <div id="errmsg"></div>
-        <form>
-
-        <div class="row">
-          <div class="form-group col-sm-12 col-md-6 col-lg-6">
-            <label for="fullname" class="control-label">Full Name:</label>
-            <input type="text" class="form-control" id="fullname" name="fullname" placeholder="John Doe">
           </div>
-        
-          <div class="form-group col-sm-12 col-md-6 col-lg-6">
-            <label for="youremail" class="control-label">Your Email:</label>
-            <input type="email" class="form-control" id="youremail" name="email" placeholder="john.doe@example.com">
+          <!-- /Side Widget -->
+
+        </div>
+        <!-- /Side Col -->
+
+        <div *ngIf="!formSubmitted" style="position: relative;">
+            <ngx-loading [show]="buttonLoading" [config]="{ backdropBorderRadius: '1px' }"></ngx-loading>
+          <!-- Contact Form -->
+          <form [formGroup]="contactUsForm">
+            <div class="row">
+              <div class="form-group col-sm-12 col-md-6 col-lg-6">
+                <label for="fullname" class="control-label">Full Name:
+                  <a style="color: #db5959;" *ngIf="contactUsForm.get('contactName').invalid && contactUsForm.get('contactName').touched">Please enter your name</a>
+                </label>
+                <input type="text" class="form-control" id="fullname" name="fullname" placeholder="John Doe" formControlName="contactName"
+                  autocomplete="off">
+              </div>
+  
+              <div class="form-group col-sm-12 col-md-6 col-lg-6">
+                <label for="youremail" class="control-label">Your Email:
+                  <a style="color: #db5959;" *ngIf="contactUsForm.get('contactEmail').invalid && contactUsForm.get('contactEmail').touched">Please enter a valid email</a>
+                </label>
+                <input type="email" class="form-control" id="youremail" name="email" placeholder="john.doe@example.com" formControlName="contactEmail"
+                  autocomplete="off">
+              </div>
+            </div>
+  
+            <div class="form-group">
+              <label for="reason" class="control-label">Reason of Contact:</label>
+              <select class="form-control" id="reason" name="reason" formControlName="reason">
+                <option value="General Inquiries">General Inquiries</option>
+                <option value="Profession Contacts">Profession Contacts</option>
+                <option value="Website Technical">Website Technical</option>
+              </select>
+            </div>
+  
+            <div class="form-group">
+              <label for="message-text" class="control-label">Message:
+                <a style="color: #db5959;" *ngIf="contactUsForm.get('contactMessage').invalid && contactUsForm.get('contactMessage').touched && contactUsForm.get('contactMessage').errors">Message needs to be {{ maxMessageLength }} character length or longer. ({{ currentMessageLength }} characters)</a>
+              </label>
+              <textarea class="form-control" id="message-text" name="message" rows="8" placeholder="Write your question here..." formControlName="contactMessage"></textarea>
+            </div>
+          </form>
+  
+          <div class="text-right">
+            <button mat-raised-button color="primary" [disabled]="!contactUsForm.valid || buttonLoading" (click)="sendMessage()">
+              Send Message!
+            </button>
           </div>
+          <!-- /Contact Form -->
         </div>
 
-          <div class="form-group">
-            <label for="reason" class="control-label">Reason of Contact:</label>
-            <select class="form-control" id="reason" name="reason">
-              <option>General Inquiries</option>
-              <option>Profession Contacts</option>
-              <option>Website Technical</option>
-            </select>
+        <div *ngIf="formSubmitted" class="text-center">
+          <div style="margin-top: 214px; padding-bottom: 60px;">
+            <h1>Thank you for your message!</h1>
+            <h3>We will get back to you as soon as possible.</h3>
+            <h3>Thank you for your patients!</h3>
           </div>
-        
-
-
-          <div class="form-group">
-            <label for="message-text" class="control-label">Message:</label>
-            <textarea class="form-control" id="message-text" name="message" rows="8" placeholder="Write your question here..."></textarea>
-          </div>
-        </form>
-
-        <div class="text-right">
-          <button mat-raised-button color="primary">Send Message!</button>
         </div>
-        <!-- /Contact Form -->
 
       </div>
       <!-- /Main Col -->
 
-
-
     </div>
     <!-- /Row -->
-
-      <!-- Side Col -->
-      <div class="col-sm-12 col-md-12" style="padding:50px 200px 0px 200px">
-        
-                <!-- Side Widget -->
-                <div class="side-widget">
-        
-                  <h5 class="boxed-title">
-                    <font class="flam-font">Our Location</font>
-                  </h5>
-                  <!-- vlinks -->
-                  <div class="row">
-                    <div class="col-sm-4 col-md-4 col-lg-4"  style="text-align: center;">
-                      <i class="icon ti-home custom_round_time"></i>
-                      <?echo $address;?>
-                    </div>
-
-                    <div class="col-sm-4 col-md-4 col-lg-4"  style="text-align: center;">
-                      <i class="icon ti-email custom_round_time"></i>
-                      <?echo $email;?>
-                    </div>
-
-                    <div class="col-sm-4 col-md-4 col-lg-4"  style="text-align: center;">
-                      <i class="icon ti-themify-favicon custom_round_time"></i>
-                      <?echo $phone;?>
-                    </div>
-                  </div>
-
-                  <!-- /vlinks -->
-        
-                </div>
-                <!-- /Side Widget -->
-        
-              </div>
-              <!-- /Side Col -->
-
 
   </div>
   <!-- /Container -->

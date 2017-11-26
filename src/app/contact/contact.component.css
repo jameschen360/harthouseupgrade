@@ -13,12 +13,26 @@ agm-map {
     height: 500px;
   }
 
-  p, input, span, ul, h5, textarea, select{
+  p, input, span, ul, h5, h3, textarea, select{
     font-family: 'Text Me One', sans-serif;
   }
 
-  label, button {
+  label, button, h3 {
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
+    word-spacing: 1px;  
+}
+
+.content-block > .container {
+    padding-top: 0px !important;
+    padding-bottom: 5px;
+}
+
+.contact-us-block { 
+    padding-top: 10px;
+}
+.contact-us-font {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 16px;
     word-spacing: 1px;  
 }

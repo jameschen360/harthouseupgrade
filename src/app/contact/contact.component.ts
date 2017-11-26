@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material';
+
 import { FrontFetchService } from '../server/front-fetch.service';
 
 @Component({
@@ -8,11 +10,27 @@ import { FrontFetchService } from '../server/front-fetch.service';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
-  private parrallaxUrl;
+  public parrallaxUrl;
   postData = {
     'user_id': 'public'
   };
+  messageContent = {
+    'fullName': '',
+    'email': '',
+    'reason': '',
+    'message': ''
+  };
   public responseData;
+  public contactUsForm: FormGroup;
+  public maxMessageLength = 50; // max message length
+  public currentMessageLength;
+  public buttonLoading = false;
+  public formSubmitted = false;
+
+  public addressHTML;
+  public emailHTML;
+  public phoneHTML;
+
   lat = 53.01889;
   lng = -112.8245;
   zoom = 15;
@@ -162,15 +180,55 @@ export class ContactComponent implements OnInit {
       ]
     }
   ];
-  constructor(public getData: FrontFetchService) {this.getBannerImages();}
-
-  ngOnInit() {
+  constructor(public getData: FrontFetchService, public snackBar: MatSnackBar) {
+    this.getContactContent();
+    this.contactUsForm = new FormGroup({
+      'contactName': new FormControl(null, [Validators.required]),
+      'contactEmail': new FormControl(null, [Validators.required, Validators.pattern(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]),
+      'contactMessage': new FormControl(null, [Validators.required, Validators.minLength(this.maxMessageLength)]),
+      'reason': new FormControl('General Inquiries')
+    });
   }
 
-  getBannerImages() {
+  ngOnInit() {
+    this.onChanges();
+  }
+
+  onChanges(): void {
+    this.contactUsForm.get('contactMessage').valueChanges.subscribe(val => {
+      try {
+        this.currentMessageLength = val.length;
+      } catch (err) {
+        this.currentMessageLength = 0;
+      }
+    });
+  }
+
+  getContactContent() {
     this.getData.postData(this.postData, 'contactUsPage').then((result) => {
       this.responseData = result;
       this.parrallaxUrl = this.responseData.imagePath;
+      this.addressHTML = this.responseData.content[0].content;
+      this.emailHTML = this.responseData.content[1].content;
+      this.phoneHTML = this.responseData.content[2].content;
+    }, (err) => {
+    });
+  }
+
+  sendMessage() {
+    this.buttonLoading = true;
+    this.messageContent.fullName = this.contactUsForm.value.contactName;
+    this.messageContent.email = this.contactUsForm.value.contactEmail;
+    this.messageContent.reason = this.contactUsForm.value.reason;
+    this.messageContent.message = this.contactUsForm.value.contactMessage;
+
+    this.getData.postData(this.messageContent, 'contactUsMessageSend').then((result) => {
+      this.responseData = result;
+      this.buttonLoading = false;
+      this.formSubmitted = true;
+      this.snackBar.open('Thank you for your message. We will reply to you shortly!', 'Close', {
+        duration: 10000
+      });
     }, (err) => {
     });
   }
