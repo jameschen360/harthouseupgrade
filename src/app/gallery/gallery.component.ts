@@ -36,7 +36,7 @@ export class GalleryComponent implements OnInit {
         });
 
       }
-      this.galleryImages = this.galleryImages.splice(1, 2);
+      this.galleryImages = this.galleryImages.splice(1);
 
       this.galleryLoading = false;
     }, (err) => {
