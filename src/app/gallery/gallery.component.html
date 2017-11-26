@@ -13,6 +13,7 @@
   <!-- /Container -->
 </section>
 
-<div class="text-center" style="padding-top:20px;">
+<div class="text-center" style="padding-top:20px; position: relative;">
+  <ngx-loading [show]="buttonLoading" [config]="{ backdropBorderRadius: '0px' }"></ngx-loading>
   <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
 </div>

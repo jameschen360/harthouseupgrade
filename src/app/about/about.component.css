@@ -4,8 +4,20 @@
     word-spacing: 3px;
 }
 
-/deep/ .aboutus-content {
+.aboutus-content {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     word-spacing: 3px;  
+}
+
+label, button, h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    word-spacing: 1px;  
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 32px !important;
+    color: #5f5749 !important;
 }

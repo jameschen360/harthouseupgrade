@@ -16,6 +16,7 @@ export class GalleryComponent implements OnInit {
   public responseData;
   public galleryLoading = false;
   public parrallaxUrl;
+  public buttonLoading = true;
 
   constructor(public getData: FrontFetchService) {
     this.getGalleryImages();
@@ -39,6 +40,7 @@ export class GalleryComponent implements OnInit {
       this.galleryImages = this.galleryImages.splice(1);
 
       this.galleryLoading = false;
+      this.buttonLoading = false;
     }, (err) => {
       console.log('TOO BAD');
     });

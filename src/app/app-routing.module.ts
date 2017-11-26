@@ -18,7 +18,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 const appRoutes: Routes = [
     { path: '', component: HomeComponent},
     { path: 'aboutus', component: AboutComponent},
-    { path: 'menu', redirectTo: 'menu/menu-pdf/lunch'},
+    { path: 'menu', redirectTo: 'menu/menu-pdf/food'},
     { path: 'menu', component: MenuComponent, children: [
        { path: 'menu-pdf/:id', component: MenuPdfComponent }
     ]},
