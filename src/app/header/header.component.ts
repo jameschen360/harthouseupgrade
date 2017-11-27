@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewChild, ElementRef} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 declare var $;
 
@@ -9,17 +10,21 @@ declare var $;
 })
 
 export class HeaderComponent implements OnInit {
-  // @ViewChild('isOpen') isOpen: ElementRef;
 
-  constructor() {
-    $(function() {
+  constructor(private router: Router) {
+    $(function () {
       $(document).click(function (event) {
         $('.navbar-collapse').collapse('hide');
       });
     });
+
+
   }
 
   ngOnInit() {
+    this.router.events.subscribe((val) => {
+      window.scrollTo(0, 0);
+    });
   }
 
 
