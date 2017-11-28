@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { FrontFetchService } from '../server/front-fetch.service';
 
 
@@ -14,7 +15,7 @@ export class AboutComponent implements OnInit {
   public responseData;
   public parrallaxUrl;
   public aboutUsContent;
-  constructor(public getData: FrontFetchService) {
+  constructor(public getData: FrontFetchService, private _sanitizer: DomSanitizer) {
     this.getAboutUsContent();
   }
 
@@ -25,8 +26,12 @@ export class AboutComponent implements OnInit {
     this.getData.postData(this.postData, 'aboutUsPage').then((result) => {
       this.responseData = result;
       this.parrallaxUrl = this.responseData.imagePath;
-      this.aboutUsContent = this.responseData.content;
+      this.aboutUsContent = this.transform(this.responseData.content);
     }, (err) => {
     });
+  }
+
+  transform(v: string): SafeHtml {
+    return this._sanitizer.bypassSecurityTrustHtml(v);
   }
 }

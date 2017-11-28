@@ -63,7 +63,7 @@
         <!-- /Side Col -->
 
         <div *ngIf="!formSubmitted" style="position: relative;">
-            <ngx-loading [show]="buttonLoading" [config]="{ backdropBorderRadius: '1px' }"></ngx-loading>
+          <ngx-loading [show]="buttonLoading" [config]="{ backdropBorderRadius: '1px' }"></ngx-loading>
           <!-- Contact Form -->
           <form [formGroup]="contactUsForm">
             <div class="row">
@@ -71,19 +71,19 @@
                 <label for="fullname" class="control-label">Full Name:
                   <a style="color: #db5959;" *ngIf="contactUsForm.get('contactName').invalid && contactUsForm.get('contactName').touched">Please enter your name</a>
                 </label>
-                <input type="text" class="form-control" id="fullname" name="fullname" placeholder="John Doe" formControlName="contactName"
+                <input type="text" class="form-control" id="fullname" name="fullname" placeholder="full name..." formControlName="contactName"
                   autocomplete="off">
               </div>
-  
+
               <div class="form-group col-sm-12 col-md-6 col-lg-6">
                 <label for="youremail" class="control-label">Your Email:
                   <a style="color: #db5959;" *ngIf="contactUsForm.get('contactEmail').invalid && contactUsForm.get('contactEmail').touched">Please enter a valid email</a>
                 </label>
-                <input type="email" class="form-control" id="youremail" name="email" placeholder="john.doe@example.com" formControlName="contactEmail"
+                <input type="email" class="form-control" id="youremail" name="email" placeholder="your email..." formControlName="contactEmail"
                   autocomplete="off">
               </div>
             </div>
-  
+
             <div class="form-group">
               <label for="reason" class="control-label">Reason of Contact:</label>
               <select class="form-control" id="reason" name="reason" formControlName="reason">
@@ -92,15 +92,15 @@
                 <option value="Website Technical">Website Technical</option>
               </select>
             </div>
-  
+
             <div class="form-group">
               <label for="message-text" class="control-label">Message:
                 <a style="color: #db5959;" *ngIf="contactUsForm.get('contactMessage').invalid && contactUsForm.get('contactMessage').touched && contactUsForm.get('contactMessage').errors">Message needs to be {{ maxMessageLength }} character length or longer. ({{ currentMessageLength }} characters)</a>
               </label>
-              <textarea class="form-control" id="message-text" name="message" rows="8" placeholder="Write your question here..." formControlName="contactMessage"></textarea>
+              <textarea class="form-control" id="message-text" name="message" rows="8" placeholder="write your question here..." formControlName="contactMessage"></textarea>
             </div>
           </form>
-  
+
           <div class="text-right">
             <button mat-raised-button color="primary" [disabled]="!contactUsForm.valid || buttonLoading" (click)="sendMessage()">
               Send Message!
