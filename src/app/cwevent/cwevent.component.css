@@ -16,6 +16,7 @@
   font-size: 26px;
   padding-top: 12px;
   color: #4b4b4b;
+  line-height: 28px;
 }
 
 .transition, p, ul li i:before, ul li i:after {
@@ -65,7 +66,7 @@
     padding:0px 2.5em 0px 2.5em;
   }
 
-  @media(max-width: 480px) {
+  @media(max-width: 768px) {
     p {
       color: rgba(48, 69, 92, 0.8);
       font-size: 17px;
@@ -80,7 +81,7 @@
       z-index: 2;
       text-align: left;
       text-justify: inter-word;
-      padding:0px 2.5em 0px 2.5em;
+      padding: 0px 0em 0px 0em;
     }
   }
 

@@ -8,12 +8,23 @@
     font-family: 'Montaga', serif;
     font-size: 19px;
     padding-top: 1px;
+    margin-left: -7px;
 }
 
-/deep/  @media (max-width: 991px) {
+/deep/  @media (max-width: 767px) {
     .hnav.nav-bottom .navbar-collapse .navbar-nav > li > a {
         padding: 0 9px;
+        border-bottom: 2px dotted #80602a78 !important;
     }
+}
+
+/deep/ .dropdown-menu > li > a, .hnav .navbar-nav .dropdown-menu > li > a {
+    padding: 0 19px;
+    line-height: 40px;
+    color: #5f5441;
+    font-size: 0.9em;
+    text-transform: capitalize;
+    border-bottom: 0px solid rgba(0, 0, 0, 0.1);
 }
 
 @media screen 
@@ -22,6 +33,13 @@ and (max-width: 1199px){
     .nav-font { 
         font-family: 'Montaga', serif;
         font-size: 17px;
+    }
+}
+
+@media ( max-width: 767px) {
+    .nav-font { 
+        font-family: 'Montaga', serif;
+        font-size: 16px;
     }
 }
 
