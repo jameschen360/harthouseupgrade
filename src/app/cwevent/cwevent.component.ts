@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { FrontFetchService } from '../server/front-fetch.service';
 
 @Component({
@@ -13,9 +14,15 @@ export class CweventComponent implements OnInit {
   };
   public responseData;
   public parrallaxUrl;
-  public cwEventContent;
-  public contentImage;
-  constructor(public getData: FrontFetchService) {
+  public httpContent;
+  cweventContents;
+  // cweventContents = [
+  //   {
+  //     title: <string>null,
+  //     content: <any>null
+  //   }
+  // ];
+  constructor(public getData: FrontFetchService, private _sanitizer: DomSanitizer) {
     this.getCWEventContent();
   }
 
@@ -26,11 +33,15 @@ export class CweventComponent implements OnInit {
     this.getData.postData(this.postData, 'cwevent').then((result) => {
       this.responseData = result;
       this.parrallaxUrl = this.responseData.imagePath;
-      this.cwEventContent = this.responseData.content;
-      // this.contentImage = this.responseData.contentImage;  // NOT IN USE
+      this.cweventContents = this.responseData.content;
+
 
     }, (err) => {
     });
+  }
+
+  transform(v: string): SafeHtml {
+    return this._sanitizer.bypassSecurityTrustHtml(v);
   }
 }
 

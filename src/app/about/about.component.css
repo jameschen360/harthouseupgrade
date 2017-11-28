@@ -7,7 +7,14 @@
 .aboutus-content {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
-    word-spacing: 3px;  
+    word-spacing: 3px;
+    text-align: justify !important;
+    text-justify: inter-word !important;
+    padding: 0px 7% 0px 7%;  
+}
+
+p {
+
 }
 
 label, button, h3 {
