@@ -17,6 +17,11 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.router.events.subscribe((val) => {
       window.scrollTo(0, 0);
+
+      $(document).ready(function () {
+        $('#nav-icon').removeClass('open');
+      });
+      
     });
 
     $(document).ready(function () {
@@ -29,8 +34,9 @@ export class HeaderComponent implements OnInit {
           $('#nav-icon').addClass('open');
         } else if ($('#ham').attr('aria-expanded') === 'false') {
           console.log('not open');
-        } else {
           $('#nav-icon').removeClass('open');
+        } else {
+          
         }
         $('.navbar-collapse').collapse('hide');
       });
