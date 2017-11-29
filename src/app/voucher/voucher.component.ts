@@ -48,7 +48,7 @@ export class VoucherComponent implements OnInit {
   public barcodeUrl = 'https://harthousewineandtapa.com/angularServices/barcode/barcode.php?codetype=Code128&size=50&text=';
 
   public paypalConfig: any = {
-    env: 'sandbox',
+    env: 'production',
     style: {
       layout: 'vertical',  // horizontal | vertical
       size: 'medium',    // medium | large | responsive
@@ -57,8 +57,8 @@ export class VoucherComponent implements OnInit {
     },
 
     client: {
-      sandbox: 'AXtyrndQ2sbXhJi5YziOImLGZR6kg5TQXHPpoQYg36c3dNpg7FNIBLmy1-F44NPeQvTqNVc9Y8CjVZ9n',
-      production: 'xxxxxxxxxx'
+      sandbox: 'AQPHriQG-nHxgCyim1X3o0jEX7XQTwiQjQvRogHeFc2ga5CrbSsPOAszvQPELdL7XcnOgFNc0Qn_pItP',
+      production: 'AQ1hs5jeomvxlYwTh6ppEAMTRSLoo5GnKQAqAjCMrq3JQoHSXn1gKJRlAjZTUh-zNTGnMb-CLbDjTdrz'
     },
 
     commit: true,
@@ -69,6 +69,9 @@ export class VoucherComponent implements OnInit {
             {
               amount: {
                 total: this.paypalForm.value.amount, currency: 'CAD'
+              },
+              payment_options: {
+                'allowed_payment_method': 'INSTANT_FUNDING_SOURCE'
               }
             }
           ]
@@ -167,7 +170,7 @@ export class VoucherComponent implements OnInit {
   }
 
   voucherPriceLoop() {
-    this.voucherPrice = this.voucherPrice.splice(1, 2);
+    this.voucherPrice = this.voucherPrice.splice(1);
     const maxAmount = 250;
     const minAmount = 50;
     for (let i = minAmount; i <= maxAmount; i += 50) {

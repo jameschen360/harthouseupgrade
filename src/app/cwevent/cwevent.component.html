@@ -14,13 +14,17 @@
 
 </section>
 
-<div class="row" style="padding:30px">
-  <div [innerHTML]="cwEventContent" class="col-md-12 cwevent-content"></div>
+<div style="padding:0px 10% 40px 10%;">
+  <!-- <div [innerHTML]="cwEventContent" class="col-md-12 cwevent-content"></div> -->
+  <ul>
+    <li *ngFor="let cweventContent of cweventContents; let i = index">
+      <input type="checkbox" [checked]="i != 0">
+      <i></i>
+      <h2 class="title">{{ cweventContent.title }}</h2>
+      <p [innerHTML]="cweventContent.content">
+      </p>
+    </li>
 
-  <!-- <div class="col-md-4">
-    <div class="js-video [vimeo, widescreen]">
-      <iframe width="640" height="360" src="//www.youtube.com/embed/lpEBAagmw3o" frameborder="0" allowfullscreen></iframe>
-    </div>
-  </div> -->
+  </ul>
 
 </div>

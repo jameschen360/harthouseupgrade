@@ -13,3 +13,22 @@ iframe.twitter-timeline {
   color: #222222;
   padding-bottom: 34px;
 }
+.social-hour-footer-left{
+  padding-bottom:20px; 
+  padding-left:120px;
+}
+.social-hour-footer-right{
+  padding-bottom:20px; 
+  padding-right:120px;
+}
+
+@media (max-width: 1200px) {
+  .social-hour-footer-left{
+    padding-bottom:20px; 
+    padding-left:0px;
+  }
+  .social-hour-footer-right{
+    padding-bottom:20px; 
+    padding-right:0px;
+  }
+}
