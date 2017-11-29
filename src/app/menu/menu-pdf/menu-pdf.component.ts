@@ -1,6 +1,7 @@
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FrontFetchService } from '../../server/front-fetch.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-menu-pdf',
@@ -12,7 +13,7 @@ export class MenuPdfComponent implements OnInit {
   responseData;
   url;
 
-  constructor(private route: ActivatedRoute, public getData: FrontFetchService, public router: Router) {
+  constructor(private route: ActivatedRoute, public getData: FrontFetchService, public router: Router, private titleService: Title) {
     this.postData =  {
       menuType: this.route.snapshot.params['id']
     };
@@ -24,6 +25,8 @@ export class MenuPdfComponent implements OnInit {
         }
       );
       this.getMenuPdf();
+
+      this.titleService.setTitle( 'Hart House Wine & Tapa | Menus' );
   }
 
   ngOnInit() {

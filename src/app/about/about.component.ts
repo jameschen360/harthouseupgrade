@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { FrontFetchService } from '../server/front-fetch.service';
+import { Title } from '@angular/platform-browser';
 
 
 @Component({
@@ -15,8 +16,10 @@ export class AboutComponent implements OnInit {
   public responseData;
   public parrallaxUrl;
   public aboutUsContent;
-  constructor(public getData: FrontFetchService, private _sanitizer: DomSanitizer) {
+  constructor(public getData: FrontFetchService, private _sanitizer: DomSanitizer, private titleService: Title) {
     this.getAboutUsContent();
+
+    this.titleService.setTitle( 'Hart House Wine & Tapa | About Us' );
   }
 
   ngOnInit() {

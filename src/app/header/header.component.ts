@@ -19,27 +19,33 @@ export class HeaderComponent implements OnInit {
       window.scrollTo(0, 0);
     });
 
-    // $(document).ready(function () {
-    //   $('#nav-icon').click(function () {
-    //     $('#nav-icon').toggleClass('open');
-    //   });
-
-    // });
-    $(function () {
+    $(document).ready(function () {
+      // $('#nav-icon').click(function () {
+      //   $('#nav-icon').toggleClass('open');
+      // });
       $(document).click(function (event) {
-        if ($('#nav-icon').data('clicked') && !$('#ham').hasClass('collapsed')) {
-          $('#nav-icon').toggleClass('open');
-        } else if ( event.target.class === 'container' && $('#ham').hasClass('collapsed')) {
-
-
-        } else if (event.target.class !== 'container' && $('#ham').hasClass('collapsed')) {
-
+        if ($('#ham').attr('aria-expanded') === 'true') {
+          console.log('open');
+          $('#nav-icon').addClass('open');
+        } else if ($('#ham').attr('aria-expanded') === 'false') {
+          console.log('not open');
         } else {
-
+          $('#nav-icon').removeClass('open');
         }
         $('.navbar-collapse').collapse('hide');
       });
+
     });
+    // $(function () {
+    //   $(document).click(function (event) {
+    //     if ($('#ham').hasClass('collapsed')) {
+
+    //     } else {
+    //       $('#nav-icon').removeClass('open');
+    //     }
+    //     $('.navbar-collapse').collapse('hide');
+    //   });
+    // });
   }
 
 

@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material';
 
 import { FrontFetchService } from '../server/front-fetch.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-contact',
@@ -180,7 +181,7 @@ export class ContactComponent implements OnInit {
       ]
     }
   ];
-  constructor(public getData: FrontFetchService, public snackBar: MatSnackBar) {
+  constructor(public getData: FrontFetchService, public snackBar: MatSnackBar, private titleService: Title) {
     this.getContactContent();
     this.contactUsForm = new FormGroup({
       'contactName': new FormControl(null, [Validators.required]),
@@ -188,6 +189,8 @@ export class ContactComponent implements OnInit {
       'contactMessage': new FormControl(null, [Validators.required, Validators.minLength(this.maxMessageLength)]),
       'reason': new FormControl('General Inquiries')
     });
+
+    this.titleService.setTitle( 'Hart House Wine & Tapa | Contact Us' );
   }
 
   ngOnInit() {

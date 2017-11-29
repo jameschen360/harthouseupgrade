@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { FrontFetchService } from '../server/front-fetch.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-news',
@@ -22,8 +23,9 @@ export class NewsComponent implements OnInit {
 
   noMoreNews = false;
   tempDisable = false;
-  constructor(public getData: FrontFetchService, private elementRef: ElementRef) {
+  constructor(public getData: FrontFetchService, private elementRef: ElementRef, private titleService: Title) {
     this.getNews();
+    this.titleService.setTitle( 'Hart House Wine & Tapa | News' );
   }
 
   ngOnInit() {

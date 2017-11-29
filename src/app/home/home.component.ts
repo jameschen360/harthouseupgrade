@@ -2,6 +2,7 @@ import { Component, OnInit, Inject, AfterViewInit } from '@angular/core';
 import { FrontFetchService } from '../server/front-fetch.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { EmbedVideoService } from 'ngx-embed-video';
+import { Title } from '@angular/platform-browser';
 
 declare var $;
 
@@ -22,10 +23,12 @@ export class HomeComponent implements OnInit {
   public videoUrl = null;
   public title;
   public iframe_html;
-  constructor(public getData: FrontFetchService, private sanitizer: DomSanitizer, private embedService: EmbedVideoService) {
+  constructor(public getData: FrontFetchService, private sanitizer: DomSanitizer, private embedService: EmbedVideoService, private titleService: Title) {
     this.bannerLoading = true;
     this.getBannerImages();
     this.getHomeVideoContent();
+
+    this.titleService.setTitle( 'Hart House Wine & Tapa | Home - Camrose Alberta' );
   }
 
   ngOnInit() {

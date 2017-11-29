@@ -2,7 +2,7 @@ import { AgmCoreModule } from '@agm/core';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { EmbedVideo } from 'ngx-embed-video';
@@ -29,6 +29,7 @@ import { FrontFetchService } from './server/front-fetch.service';
 import { VoucherComponent } from './voucher/voucher.component';
 import { BalanceModalComponent } from './voucher/balance-modal/balance-modal.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+
 
 @NgModule({
   declarations: [
@@ -65,15 +66,18 @@ import { NotFoundComponent } from './not-found/not-found.component';
     EmbedVideo,
     PdfViewerModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
 
   ],
   providers: [
-    FrontFetchService
+    FrontFetchService,
+    Title
   ],
   entryComponents: [
     BalanceModalComponent,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FrontFetchService } from '../server/front-fetch.service';
 
 import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gallery';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-gallery',
@@ -18,9 +19,11 @@ export class GalleryComponent implements OnInit {
   public parrallaxUrl;
   public buttonLoading = true;
 
-  constructor(public getData: FrontFetchService) {
+  constructor(public getData: FrontFetchService, private titleService: Title) {
     this.getGalleryImages();
     this.getBannerImages();
+
+    this.titleService.setTitle( 'Hart House Wine & Tapa | Gallery' );
   }
   galleryImages = [{ small: '', medium: '', big: '', description: '' }];
 

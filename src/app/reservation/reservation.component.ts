@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material';
 
 import { FrontFetchService } from '../server/front-fetch.service';
+import { Title } from '@angular/platform-browser';
 
 declare var $;
 
@@ -21,7 +22,7 @@ export class ReservationComponent implements OnInit {
   reservationForm: FormGroup;
   public buttonLoading = false;
 
-  constructor(public getData: FrontFetchService, public snackBar: MatSnackBar) {
+  constructor(public getData: FrontFetchService, public snackBar: MatSnackBar, private titleService: Title) {
     this.getReserveContent();
     this.reservationForm = new FormGroup({
       'fullName': new FormControl(null, Validators.required),
@@ -31,6 +32,8 @@ export class ReservationComponent implements OnInit {
       'dateTime': new FormControl(null),
       'message': new FormControl(null)
     });
+
+    this.titleService.setTitle( 'Hart House Wine & Tapa | Reservation' );
   }
 
   ngOnInit() {

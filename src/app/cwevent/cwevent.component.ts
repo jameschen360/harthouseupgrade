@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { FrontFetchService } from '../server/front-fetch.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-cwevent',
@@ -22,8 +23,10 @@ export class CweventComponent implements OnInit {
   //     content: <any>null
   //   }
   // ];
-  constructor(public getData: FrontFetchService, private _sanitizer: DomSanitizer) {
+  constructor(public getData: FrontFetchService, private _sanitizer: DomSanitizer, private titleService: Title) {
     this.getCWEventContent();
+
+    this.titleService.setTitle( 'Hart House Wine & Tapa | Corporate & Wedding Event' );
   }
 
   ngOnInit() {

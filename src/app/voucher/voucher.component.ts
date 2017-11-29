@@ -4,6 +4,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 import { FrontFetchService } from '../server/front-fetch.service';
 import { BalanceModalComponent } from './balance-modal/balance-modal.component';
+import { Title } from '@angular/platform-browser';
 
 declare var paypal: any;
 
@@ -117,7 +118,7 @@ export class VoucherComponent implements OnInit {
     }
   };
 
-  constructor(public getData: FrontFetchService, public dialog: MatDialog) {
+  constructor(public getData: FrontFetchService, public dialog: MatDialog, private titleService: Title) {
     this.paypalForm = new FormGroup({
       'fullName': new FormControl(null, Validators.required),
       'email': new FormControl(null, [Validators.required, Validators.pattern(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]),
@@ -129,6 +130,8 @@ export class VoucherComponent implements OnInit {
       this.parrallaxUrl = this.responseData.imagePath;
     }, (err) => {
     });
+
+    this.titleService.setTitle( 'Hart House Wine & Tapa | Gift Voucher' );
   }
 
   public ngOnInit() {

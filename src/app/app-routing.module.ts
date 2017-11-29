@@ -1,7 +1,6 @@
 import { ContactComponent } from './contact/contact.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
 import { AboutComponent } from './about/about.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { CweventComponent } from './cwevent/cwevent.component';
@@ -16,24 +15,29 @@ import { GuestComponent } from './guest/guest.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 const appRoutes: Routes = [
-    { path: '', component: HomeComponent},
-    { path: 'aboutus', component: AboutComponent},
-    { path: 'menu', redirectTo: 'menu/menu-pdf/food'},
-    { path: 'menu', component: MenuComponent, children: [
-       { path: 'menu-pdf/:id', component: MenuPdfComponent }
-    ]},
-    { path: 'gallery', component: GalleryComponent},
-    { path: 'news', component: NewsComponent},
-    { path: 'calendar', component: CalendarComponent},
-    { path: 'cwevent', component: CweventComponent},
-    { path: 'reservation', component: ReservationComponent},
-    { path: 'voucher', component: VoucherComponent},
-    { path: 'contactus', component: ContactComponent},
-    { path: 'guest', component: GuestComponent},
+    {
+        path: '',
+        component: HomeComponent,
+    },
+    { path: 'aboutus', component: AboutComponent },
+    { path: 'menu', redirectTo: 'menu/menu-pdf/food' },
+    {
+        path: 'menu', component: MenuComponent, children: [
+            { path: 'menu-pdf/:id', component: MenuPdfComponent }
+        ]
+    },
+    { path: 'gallery', component: GalleryComponent },
+    { path: 'news', component: NewsComponent },
+    { path: 'calendar', component: CalendarComponent },
+    { path: 'cwevent', component: CweventComponent },
+    { path: 'reservation', component: ReservationComponent },
+    { path: 'voucher', component: VoucherComponent },
+    { path: 'contactus', component: ContactComponent },
+    { path: 'guest', component: GuestComponent },
     { path: '404', component: NotFoundComponent },
     { path: '**', redirectTo: '404' },
 
-  ];
+];
 
 @NgModule({
     imports: [RouterModule.forRoot(appRoutes)],

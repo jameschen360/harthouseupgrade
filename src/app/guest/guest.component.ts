@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FrontFetchService } from '../server/front-fetch.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-guest',
@@ -13,9 +14,11 @@ export class GuestComponent implements OnInit {
   url;
   public parrallaxUrl;
 
-  constructor(public getData: FrontFetchService) {
+  constructor(public getData: FrontFetchService, private titleService: Title) {
     this.getMenuPdf();
     this.getBannerImages();
+
+    this.titleService.setTitle( 'Hart House Wine & Tapa | Guest B&B' );
   }
 
   ngOnInit() {
