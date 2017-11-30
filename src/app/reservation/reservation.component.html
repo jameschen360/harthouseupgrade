@@ -26,18 +26,18 @@
           <div class="row">
             <div class="form-group col-md-6">
               <label for="fullname" class="control-label">Your Name: <a style="color: #db5959;" *ngIf="reservationForm.get('fullName').invalid && reservationForm.get('fullName').touched">Please enter your name</a></label>
-              <input type="text" class="form-control" placeholder="John Doe" formControlName="fullName">
+              <input type="text" class="form-control" placeholder="your name..." formControlName="fullName">
             </div>
 
             <div class="form-group col-md-6">
               <label for="phonenumber" class="control-label">Phone Number: <a style="color: #db5959;" *ngIf="!reservationForm.get('phoneNumber').valid && reservationForm.get('phoneNumber').touched">Please enter a phone number</a></label>
-              <input type="text" class="form-control" id="phonenumber" name="phonenumber" formControlName="phoneNumber">
+              <input type="text" class="form-control" id="phonenumber" placeholder="your number..." name="phonenumber" formControlName="phoneNumber">
             </div>
           </div>
           <div class="row">
             <div class="form-group col-md-6">
               <label for="email" class="control-label">Email: <a style="color: #db5959;" *ngIf="!reservationForm.get('email').valid && reservationForm.get('email').touched">Valid email required</a></label>
-              <input type="email" class="form-control" id="email" name="email" placeholder="your.email@example.com" formControlName="email">
+              <input type="email" class="form-control" id="email" name="email" placeholder="your email..." formControlName="email">
             </div>
 
             <div class="form-group col-md-6">

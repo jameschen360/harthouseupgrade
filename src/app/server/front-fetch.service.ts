@@ -6,10 +6,17 @@ import { Headers, Http } from '@angular/http';
 
 @Injectable()
 export class FrontFetchService {
-  URL = 'https://harthousewineandtapa.com/ngtest/general/';
+  // PRODUCTION OR SANDBOX DEV
+  setAs: String = 'production'; // or sandbox
+  URL: String;
 
-  constructor(public http: Http,
-              public router: Router) { }
+  constructor(public http: Http, public router: Router) {
+    if (this.setAs === 'production') {
+      this.URL = 'https://harthousewineandtapa.com/angularServices/general/';
+    } else  if (this.setAs === 'sandbox') {
+      this.URL = 'https://harthousewineandtapa.com/ngtest/general/';
+    }
+  }
   postData(credentials, type) {
     return new Promise((resolve, reject) => {
       const headers = new Headers();

@@ -63,6 +63,10 @@ export class GalleryComponent implements OnInit {
         width: '93%',
         height: '650px',
         thumbnailsColumns: 4,
+        imageSwipe: true,
+        thumbnailsArrows: true,
+        thumbnailsSwipe: true,
+        previewSwipe: true,
         imageAnimation: NgxGalleryAnimation.Slide
       },
       // max-width 800

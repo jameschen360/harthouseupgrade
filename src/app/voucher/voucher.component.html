@@ -46,7 +46,7 @@
                 <div class="form-group">
                   <label for="amount" class="control-label">Amount (CAD):</label>
                   <select class="form-control" formControlName="amount">
-                    <option disabled>Please select Amount</option>
+                    <option disabled selected>Please select Amount</option>
                     <option value="{{ price.amount }}" *ngFor="let price of voucherPrice">{{ price.description }}</option>
                   </select>
                 </div>

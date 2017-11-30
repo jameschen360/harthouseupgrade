@@ -17,6 +17,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.router.events.subscribe((val) => {
       window.scrollTo(0, 0);
+
       $(document).ready(function () {
         $('#nav-icon').removeClass('open');
       });
