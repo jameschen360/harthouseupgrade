@@ -14,7 +14,7 @@ export class BalanceModalComponent implements OnInit {
   public searchField = false;
   public giftCodeUrl;
   public amount;
-  public barcodeUrl = 'https://harthousewineandtapa.com/angularServices/barcode/barcode.php?codetype=Code128&size=50&text=';
+  // public barcodeUrl = 'https://harthousewineandtapa.com/angularServices/barcode/barcode.php?codetype=Code128&size=50&text=';
   public postData = {
     'voucherCode': ''
   };
@@ -43,7 +43,7 @@ export class BalanceModalComponent implements OnInit {
           duration: 5000
         });
       } else {
-        this.giftCodeUrl = this.barcodeUrl + voucherCode;
+        // this.giftCodeUrl = this.barcodeUrl + voucherCode;
         this.amount = parseFloat(this.responseData.amount).toFixed(2);
         this.searchField = true;
       }

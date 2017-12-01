@@ -18,81 +18,66 @@
 
 </section>
 
-<!-- Footer
-                    =================================================== -->
-<footer class="footer-block">
-
-  <!-- Container -->
-  <div class="container cont-top clearfix">
-
-    <!-- Row -->
-    <div class="row">
-      <!-- Links -->
-      <div class="col-md-12 links-col" style="text-align:center;">
-
-        <!-- Row -->
-        <div class="row-fluid">
-          <div class="col-lg-6 social-hour-footer-left">
-            <h1 class="footer-title">We are Social!</h1>
-            <a class="twitter-timeline" href="https://twitter.com/HartHouseAB" data-width="400" data-height="250">
-              Tweets by @TwitterDev
-            </a>
-          </div>
-          <!-- /Col -->
-
-          <!-- Col -->
-          <div class="col-lg-6 social-hour-footer-right">
-            <h1 class="footer-title">Hours of Operation</h1>
-            <div [innerHTML]="hoursOfOperation" class="footer-paragraph" style="padding-top:13px;"></div>
-          </div>
-          <!-- /Col -->
-        </div>
-        <!-- /Row -->
-
+<!--   Footer   -->
+<footer class="myfooter">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-sm-4">
+        <h4 class="title footer-title">Hours of Operation</h4>
+        <div [innerHTML]="hoursOfOperation" class="footer-paragraph"></div>
       </div>
-      <!-- /Links -->
+      <div class="col-sm-4">
+        <h4 class="title footer-title ">We are Social!</h4>
+        <p class="footer-paragraph">Hart House Wine And Tapa We are a restaurant/wine bar in a house built in 1918 serving Camrose, AB and surrounding
+          areas a unique dining experience. </p>
 
+        <ul class="social-icon">
+          <a href="#" class="social" style="padding-right: 8px;">
+            <i class="icon fa fa-facebook zoom" aria-hidden="true"></i>
+          </a>
+          <a href="#" class="social">
+            <i class="icon fa fa-twitter zoom" aria-hidden="true"></i>
+          </a>
+          <a href="#" class="social">
+            <i class="icon fa fa-instagram zoom" aria-hidden="true"></i>
+          </a>
+        </ul>
+      </div>
+      <div class="col-sm-4 text-center">
+        <h4 class="title footer-title">Gift a Friend!</h4>
+        <p class="footer-paragraph">Send something to that special person with our new Gift Vouchers. We accept PayPal, Visa, and MasterCard for simple and secure payment.</p>
+
+        <ul class="social-icon">
+          <a href="#" class="social" style="padding-right: 8px;">
+            <i class="icon fa fa-credit-card zoom" aria-hidden="true"></i>
+          </a>
+          <a href="#" class="social">
+            <i class="icon fa fa-paypal zoom" aria-hidden="true"></i>
+          </a>
+          <a href="#" class="social">
+            <i class="icon fa fa-cc-visa zoom" aria-hidden="true"></i>
+          </a>
+        </ul>
+      </div>
     </div>
-    <!-- /Row -->
+
+  </div>
+  <!-- ./container -->
+</footer>
+
+<!-- Bottom -->
+<div class="footer-bottom bcolor-bg invert-colors">
+  <!-- Container -->
+  <div class="container text-center">
+    <div class="row">
+      <small>
+        <span class="flam-font-9" style="color: #ffffff">Hart House Wine & Tapa - Copyright © 2018 HHWT</span>
+      </small>
+    </div>
 
   </div>
   <!-- /Container -->
 
-  <!-- Bottom -->
-  <div class="footer-bottom bcolor-bg invert-colors">
-
-    <!-- Container -->
-    <div class="container text-center">
-      <div class="row">
-        <ul class="hlinks">
-          <li>
-            <a href="https://www.facebook.com/HartHouseWineandTapa">
-              <i class="icon fa fa-facebook fa-2x"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://instagram.com/explore/locations/1018958838/">
-              <i class="icon fa fa-instagram fa-2x"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://twitter.com/HartHouseAB">
-              <i class="icon fa fa-twitter fa-2x"></i>
-            </a>
-          </li>
-        </ul>
-
-      </div>
-      <div class="row">
-        <small>
-          <span class="flam-font-9">Hart House Wine & Tapa - Copyright © 2018 HHWT</span>
-        </small>
-      </div>
-
-    </div>
-    <!-- /Container -->
-
-  </div>
-  <!-- /Bottom -->
-
-</footer>
+</div>
+<!-- /Bottom -->
+<!--/.footer-bottom-->

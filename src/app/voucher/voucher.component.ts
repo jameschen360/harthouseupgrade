@@ -122,7 +122,7 @@ export class VoucherComponent implements OnInit {
     this.paypalForm = new FormGroup({
       'fullName': new FormControl(null, Validators.required),
       'email': new FormControl(null, [Validators.required, Validators.pattern(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]),
-      'amount': new FormControl(null, Validators.required)
+      'amount': new FormControl(25, Validators.required)
     });
 
     this.getData.postData(this.postData, 'voucherContent').then((result) => {
@@ -174,9 +174,9 @@ export class VoucherComponent implements OnInit {
 
   voucherPriceLoop() {
     this.voucherPrice = this.voucherPrice.splice(1);
-    const maxAmount = 250;
-    const minAmount = 50;
-    for (let i = minAmount; i <= maxAmount; i += 50) {
+    const maxAmount = 150;
+    const minAmount = 25;
+    for (let i = minAmount; i <= maxAmount; i += 25) {
       const amount = i;
       const total = amount;
       this.voucherPrice.push(
