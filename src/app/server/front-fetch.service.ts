@@ -6,7 +6,7 @@ import { Headers, Http } from '@angular/http';
 
 @Injectable()
 export class FrontFetchService {
-  URL = 'https://harthousewineandtapa.com/angularServices/general/';
+  URL = 'https://harthousewineandtapa.com/ngtest/general/';
 
   constructor(public http: Http,
               public router: Router) { }
