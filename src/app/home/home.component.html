@@ -1,6 +1,7 @@
 <!-- Intro Block
         ============================================ -->
 <!-- <div class="intro-block row" style="padding-top: 20px;"> -->
+
 <div class="intro-block" style="padding-top: 20px;">
     <!-- Container -->
     <div class="container" style="position:relative">
@@ -15,15 +16,16 @@
 
 </div>
 <!-- /Intro Block============================================ -->
+<div *ngIf="videoContentBlock">
+    <hr class="style-seven">
 
-<!-- <hr class="style-seven">
-<div class="row" style="padding:0% 5% 0% 5%">
-    <div class="col-md-8">
-        <div class="js-video [vimeo, widescreen]" [innerHTML]="iframe_html"></div>
+    <div class="row" style="padding:0% 5% 0% 5%">
+        <div class="col-md-8">
+            <div class="js-video [vimeo, widescreen]" [innerHTML]="iframe_html"></div>
+        </div>
+        <div class="col-md-4">
+            <h1>{{ title }}</h1>
+            <p>{{ contentText }}</p>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h1>{{ title }}</h1>
-        <p>{{ contentText }}</p>
-    </div>
-
-</div> -->
+</div>

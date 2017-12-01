@@ -46,12 +46,11 @@
                 <div class="form-group">
                   <label for="amount" class="control-label">Amount (CAD):</label>
                   <select class="form-control" formControlName="amount">
-                    <option disabled>Please select Amount</option>
-                    <option value="{{ price.amount }}" *ngFor="let price of voucherPrice">{{ price.description }}</option>
+                    <option value="{{ price.amount }}" *ngFor="let price of voucherPrice; let i = index" [selected]="i == 0">{{ price.description }}</option>
                   </select>
                 </div>
                 <div style="position: relative;">
-                  <div id="paypal-button" *ngIf="isValidForm"></div>
+                  <div id="paypal-button" *ngIf="paypalForm.valid"></div>
                 </div>
               </form>
             </div>

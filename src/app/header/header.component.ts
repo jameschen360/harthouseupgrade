@@ -17,17 +17,11 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.router.events.subscribe((val) => {
       window.scrollTo(0, 0);
-<<<<<<< HEAD
 
       $(document).ready(function () {
         $('#nav-icon').removeClass('open');
       });
       
-=======
-      $(document).ready(function () {
-        $('#nav-icon').removeClass('open');
-      });
->>>>>>> 350a235e0997409003da15c4cb78153d927b6781
     });
 
     $(document).ready(function () {
@@ -36,13 +30,7 @@ export class HeaderComponent implements OnInit {
         if ($('#ham').attr('aria-expanded') === 'true') {
           $('#nav-icon').addClass('open');
         } else if ($('#ham').attr('aria-expanded') === 'false') {
-<<<<<<< HEAD
           console.log('not open');
-=======
-          $('#nav-icon').removeClass('open');
-          $('.navbar-collapse').collapse('hide');
-        } else {
->>>>>>> 350a235e0997409003da15c4cb78153d927b6781
           $('#nav-icon').removeClass('open');
         } else {
           

@@ -12,8 +12,8 @@
   </div>
   <br>
   <div class="row" *ngIf="searchField">
-    <img [src]="giftCodeUrl" alt="">
-    <h3>${{ amount }}</h3>
+    <!-- <img [src]="giftCodeUrl" alt=""> -->
+    <h3>Your Balance: ${{ amount }} CAD</h3>
   </div>
   <button mat-raised-button color="primary" (click)="checkBalance(voucherCode)">Check Balance</button>
 </div>

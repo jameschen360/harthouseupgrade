@@ -6512,14 +6512,11 @@ ul.tags li a:hover {
 
 
 hr.style-seven {
-  overflow: visible; /* For IE */
-  height: 30px;
-  border-style: solid;
-  border-color: #af7838cf;;
-  border-width: 1px 0 0 0;
-  border-radius: 20px;
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(136, 96, 47, 0.75), rgba(0, 0, 0, 0))
 }
-hr.style-seven:before {
+/* hr.style-seven:before {
   display: block;
   content: "";
   height: 30px;
@@ -6531,7 +6528,7 @@ hr.style-seven:before {
 }
 hr {
   margin: 23px 0;
-}
+} */
 
 .flam-font-28 {
   font-family: 'flam';
@@ -6549,8 +6546,8 @@ hr {
 }
 
 .flam-font-9 {
-  font-family: 'flam';
-  font-size: 9pt;
+  font-family: 'Text Me One', sans-serif;
+  font-size: 12pt;
 }
 
 .form-control {

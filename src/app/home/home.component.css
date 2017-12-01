@@ -8,3 +8,33 @@ h1 {
     font-family: 'Spectral SC', serif;
     font-size: 39px;
 }
+
+/deep/ .bx-wrapper .bx-pager {
+    text-align: center;
+    font-size: .85em;
+    font-family: Arial;
+    font-weight: bold;
+    color: #c78181;
+    padding-top: 0px;
+}
+
+/deep/ .bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto {
+    position: absolute;
+    bottom: -15px !important;
+    width: 100%;
+}
+
+/deep/ .bx-wrapper {
+    -moz-box-shadow: 0 0 5px #ccc;
+    -webkit-box-shadow: 0 0 5px #ccc;
+    box-shadow: 0 0 5px #ccc;
+    border: 1px solid #fff;
+    background: #fff;
+}
+
+/* /deep/ .container {
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+} */
