@@ -28,7 +28,7 @@ export class ReservationComponent implements OnInit {
       'fullName': new FormControl(null, Validators.required),
       'phoneNumber': new FormControl(null, Validators.required),
       'email': new FormControl(null, [Validators.required, Validators.pattern(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]),
-      'peopleNumber': new FormControl(null, [Validators.required]),
+      'peopleNumber': new FormControl(1, [Validators.required]),
       'dateTime': new FormControl(null),
       'message': new FormControl(null)
     });

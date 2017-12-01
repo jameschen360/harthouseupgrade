@@ -21,7 +21,6 @@ export class HeaderComponent implements OnInit {
       $(document).ready(function () {
         $('#nav-icon').removeClass('open');
       });
-      
     });
 
     $(document).ready(function () {
@@ -30,10 +29,8 @@ export class HeaderComponent implements OnInit {
         if ($('#ham').attr('aria-expanded') === 'true') {
           $('#nav-icon').addClass('open');
         } else if ($('#ham').attr('aria-expanded') === 'false') {
-          console.log('not open');
           $('#nav-icon').removeClass('open');
         } else {
-          
         }
       });
     });

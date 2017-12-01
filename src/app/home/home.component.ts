@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
   public videoUrl = null;
   public title;
   public iframe_html;
-  public videoContentBlock = true; // initialize video content block as false
+  public videoContentBlock = false; // initialize video content block as false
 
   constructor(public getData: FrontFetchService, private sanitizer: DomSanitizer,
     private embedService: EmbedVideoService, private titleService: Title) {
