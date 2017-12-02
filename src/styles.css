@@ -2017,7 +2017,7 @@ input[type="checkbox"] {
 @media (max-width: 767px) {
   .hnav .navbar-collapse {
     overflow: auto;
-    max-height: 370px;
+    max-height: 500px;
   }
 }
 
