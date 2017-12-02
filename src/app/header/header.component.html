@@ -117,7 +117,7 @@
               <span class="nav-font">Home</span>
             </a>
           </li>
-          <li routerLinkActive="active" >
+          <li routerLinkActive="active">
             <a routerLink="/aboutus">
               <span class="nav-font">About Us</span>
             </a>
@@ -132,7 +132,9 @@
               <span class="nav-font">Gallery</span>
             </a>
           </li>
-          <li class="dropdown" routerLinkActive="active">
+
+          <!-- Desktop View -->
+          <li class="dropdown hidden-xs hidden-sm" routerLinkActive="active">
             <a href="#" class="dropdown-toggle " data-toggle="dropdown">
               <span class="nav-font">Events/News</span>
               <i class="fa fa-angle-down toggler"></i>
@@ -156,6 +158,26 @@
               </li>
             </ul>
           </li>
+          <!-- End Desktop View -->
+
+
+          <!-- Mobile View -->
+          <li routerLinkActive="active" class="hidden-lg hidden-md">
+            <a routerLink="/news">
+              <span class="nav-font">News</span>
+            </a>
+          </li>
+          <li routerLinkActive="active" class="hidden-lg hidden-md">
+            <a routerLink="/calendar">
+              <span class="nav-font">Calendar</span>
+            </a>
+          </li>
+          <li routerLinkActive="active" class="hidden-lg hidden-md">
+            <a routerLink="/cwevent">
+              <span class="nav-font">Corporate and Weddings</span>
+            </a>
+          </li>
+          <!-- End Mobile View -->
 
           <li routerLinkActive="active">
             <a routerLink="/reservation">
