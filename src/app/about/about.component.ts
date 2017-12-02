@@ -3,6 +3,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { FrontFetchService } from '../server/front-fetch.service';
 import { Title } from '@angular/platform-browser';
 
+declare var $el, $ps, $up, totalHeight, $, $p;
 
 @Component({
   selector: 'app-about',
@@ -20,9 +21,17 @@ export class AboutComponent implements OnInit {
     this.getAboutUsContent();
 
     this.titleService.setTitle( 'Hart House Wine & Tapa | About Us' );
+
   }
 
   ngOnInit() {
+  }
+
+  readMore() {
+    $(document).ready(function () {
+      $('.sidebar-box').css('max-height', '8000px'); // set max height
+      $('.read-more').fadeOut(700).hide();
+    });
   }
 
   getAboutUsContent() {

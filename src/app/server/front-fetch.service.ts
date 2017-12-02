@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import 'rxjs/add/operator/map';
 
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 
 @Injectable()
@@ -17,6 +17,7 @@ export class FrontFetchService {
       this.URL = 'https://harthousewineandtapa.com/ngtest/general/';
     }
   }
+
   postData(credentials, type) {
     return new Promise((resolve, reject) => {
       const headers = new Headers();
@@ -28,5 +29,7 @@ export class FrontFetchService {
         });
     });
   }
+
+
 
 }

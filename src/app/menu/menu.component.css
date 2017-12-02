@@ -11,3 +11,8 @@
 p, ul, ol, dt, blockquote, figure, pre, table, fieldset {
     margin: 0px 0 -4px 0;
 }
+
+.nav-tabs {
+    border-bottom: 1px solid #e2dccf !important;
+    
+}

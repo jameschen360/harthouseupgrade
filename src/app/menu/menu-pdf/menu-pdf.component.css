@@ -4,3 +4,7 @@
     border-top: 0;
     background: #fff;
 }
+
+/deep/ .page {
+    border-bottom: 2px double rgb(179, 116, 44) !important;
+}

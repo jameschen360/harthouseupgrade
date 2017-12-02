@@ -42,9 +42,12 @@ button {
 
 .sticky {
     padding:15px; 
-    background-color: #f3f3f3;
 }
 
 a {
     color: #a7916d;
+}
+
+.mat-card:not([class*=mat-elevation-z]) {
+    box-shadow: 0 3px 1px -2px rgba(138, 103, 34, 0.747), 0 2px 2px 0 rgba(68, 59, 47, 0.26), 0 1px 5px 0 rgba(0,0,0,.12) !important;
 }

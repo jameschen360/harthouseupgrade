@@ -24,7 +24,19 @@ export class HeaderComponent implements OnInit {
     });
 
     $(document).ready(function () {
+      // desktop fix
       $(document).click(function (event) {
+        $('.navbar-collapse').collapse('hide');
+        if ($('#ham').attr('aria-expanded') === 'true') {
+          $('#nav-icon').addClass('open');
+        } else if ($('#ham').attr('aria-expanded') === 'false') {
+          $('#nav-icon').removeClass('open');
+        } else {
+        }
+      });
+
+      // For mobile fix
+      $(document).on('touchstart', function (e) {
         $('.navbar-collapse').collapse('hide');
         if ($('#ham').attr('aria-expanded') === 'true') {
           $('#nav-icon').addClass('open');

@@ -30,7 +30,6 @@ export class GalleryComponent implements OnInit {
   getGalleryImages() {
     this.getData.postData(this.postData, 'galleryImages').then((result) => {
       this.responseData = result;
-      console.log(this.responseData.galleryImages);
       for (let i = 0; i < this.responseData.galleryImages.length; i++) {
         this.galleryImages.push({
           small: this.responseData.galleryImages[i].url,
@@ -45,7 +44,6 @@ export class GalleryComponent implements OnInit {
       this.galleryLoading = false;
       this.buttonLoading = false;
     }, (err) => {
-      console.log('TOO BAD');
     });
   }
 

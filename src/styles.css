@@ -184,29 +184,9 @@
   background-size: cover!important;
 }
 
-/* .cover-1-bg {
-  background: url("../../images/backgrounds/cover1.jpg") no-repeat center 0 fixed;
-}
-
-.cover-2-bg {
-  background: url("../../images/backgrounds/cover2.jpg") no-repeat center 0 fixed;
-}
-
-.cover-3-bg {
-  background: url("../../images/backgrounds/cover3.jpg") no-repeat center 0 fixed;
-}
-
-.cover-4-bg {
-  background: url("../../images/backgrounds/cover4.jpg") no-repeat center 0 fixed;
-}
-
-.page-bg {
-  background: url("../../images/backgrounds/cover1.jpg") no-repeat center 0 fixed;
-} */
-
 .tile-1-bg {
   /* background: url("../../images/backgrounds/background.jpg") repeat center 0 fixed; */
-  background-color: #c7b392e0;
+  background-color: #d0bc9be0;
 }
 
 .bg-local {
@@ -864,9 +844,9 @@ pre.no-breaks, pre.no-breaks > code {
 ---------------------------------------------------*/
 .tab-pane {
   padding: 20px;
-  border: 1px solid #ddd;
+  border: 0px solid #ddd !important;
   border-top: 0;
-  background: #fff;
+  background: #ce9d3e33;
 }
 
 .tab-content.tab-no-borders .tab-pane {
@@ -6514,21 +6494,8 @@ ul.tags li a:hover {
 hr.style-seven {
   border: 0;
   height: 1px;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(136, 96, 47, 0.75), rgba(0, 0, 0, 0))
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(136, 96, 47, 0.75), rgba(0, 0, 0, 0));
 }
-/* hr.style-seven:before {
-  display: block;
-  content: "";
-  height: 30px;
-  margin-top: -31px;
-  border-style: solid;
-  border-color: #af7838cf;;
-  border-width: 0 0 1px 0;
-  border-radius: 20px;
-}
-hr {
-  margin: 23px 0;
-} */
 
 .flam-font-28 {
   font-family: 'flam';
