@@ -1,16 +1,16 @@
 /deep/ .mat-fab.mat-primary, .mat-mini-fab.mat-primary, .mat-raised-button.mat-primary {
-    background-color: #a57f44bd;
+    background-color: #a57e44;
 }
 
 /deep/ .dtp>.dtp-content>.dtp-date-view>header.dtp-header {
-    background: #88632abd;
+    background: #88622a;
     color: #fff;
     text-align: center;
     padding: .3em;
 }
 
 /deep/ .dtp div.dtp-date, .dtp div.dtp-time {
-    background: #6b4b1abd;
+    background: #6b4b1a;
     text-align: center;
     color: #fff;
     padding: 10px;
