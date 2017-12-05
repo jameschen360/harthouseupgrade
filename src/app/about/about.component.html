@@ -55,58 +55,25 @@
 
         <!-- Post -->
         <article class="blog-entry text-center">
-          <h1>About Hart House Wine & Tapa</h1>
+          <h1 [innerHTML]="aboutUsTitle"></h1>
           <hr class="aboutus">
           <div [innerHTML]="aboutUsContent" class="aboutus-content col-md-12"></div>
 
-          <div class="col-lg-12 col-md-12 col-sm-12 col-lg-12" style="padding-top: 20px;">
-            <h1>Our Chef - Kyle Guerin</h1>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-lg-12" style="padding-top: 20px;" *ngIf="!chefIsDisabled">
+            <h1 [innerHTML]="chefTitle"></h1>
             <hr class="aboutus">
             <div class="panel-body">
               <div class="col-lg-3">
-                <img alt="logo" class="round-image" src="https://s3.us-east-2.amazonaws.com/harthouse/Picture1.png">
-                <h3>Kyle Guerin</h3>
+                <img alt="logo" class="round-image" [src]="chefPicture">
+                <h3 [innerHTML]="chefName"></h3>
                 <div class="text-muted font-bold m-b-xs">Camrose, Alberta</div>
                 <hr class="aboutus hidden-lg">
               </div>
               <div class="col-lg-9 panel aboutus-content">
-                <div class="sidebar-box">
-                    <p>
-                        I Began my career at the prestigious Walter Wilcox Dining Room located at Moraine Lake Lodge in Lake Louise, AB. After successfully
-                        completing my Diploma in Culinary Management I moved on to apprentice at The Restaurant at Vineland Estates
-                        Winery. Vineland holds a 4 Diamond rating earning them top 20 best winery restaurants in the world by Access
-                        Magazine and recognized at the James Beard Foundation in New York City and Food Network Canada. I looked
-                        to further develop my career by working under Toronto City Line and Food Network Canada Chef Massimo Capra
-                        at the Rainbow Room Dining Room located in the Crowne Plaza Hotel in Niagara Falls On.
-                      </p>
-                      <p>
-                        In 2010 I traveled back to Western Canada to assume the role as Sous Chef at Elk Ridge Resort, Saskatchewan’s only 4 star
-                        resort & golf course. After two years I resigned from my role as Sous Chef to move back to my roots in
-                        Peterborough to open my own restaurant, Cravings Bakery & Cafe. In 2013, one year after opening Cravings
-                        I assumed the role as Corporate Chef and co-owner of Kawartha Entertainment Group Inc owning/operating
-                        The Venue (Peterborough’s largest multi-purpose event facility), Dolce Vita Restaurant (Fine dining Italian
-                        restaurant), The Lobby Wine Bar (Wine & Tapas restaurant) and The Whisky Club (Private members whisky club
-                        & lounge).
-                      </p>
-                      <p>
-                        In 2014 I travelled to Luxembourg, Europe as part of team Canada to represent our country at the 2014 Culinary World Cup
-                        Expo-Gast. I secured a silver medal competing against 53 countries including 3500 chefs from around the
-                        world.
-                      </p>
-                      <p>
-                        During my career I have had the pleasure privately cooking for former Prime Minister of Canada Stephen Harper, former NBA
-                        Commissioner David Stern, Pop Rock Band the Jonas Brothers, 90210 Star Jason Priestley, Actor Colin Mochrie,
-                        Two time Olympic gold medal winner Catriona Le May Doan and First Canadian Astronaut to travel space Marc
-                        Garneau.
-                      </p>
-                      <p>
-                        I recently moved to Camrose, Alberta in June 2017 with my family and joined the Hart House team fall of this year and we’re
-                        very excited to share our menu with you!
-                      </p>
-                    <p class="read-more">
-                      <button mat-raised-button color="primary" (click)="readMore()">Read More</button>
-                    </p>
-                  </div>
+                <div class="sidebar-box" [innerHTML]="chefContent"></div>
+                <p class="read-more text-center">
+                  <button mat-raised-button color="primary" (click)="readMore()">Read More</button>
+                </p>
               </div>
             </div>
           </div>

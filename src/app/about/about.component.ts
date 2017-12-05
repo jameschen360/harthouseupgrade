@@ -17,6 +17,13 @@ export class AboutComponent implements OnInit {
   public responseData;
   public parrallaxUrl;
   public aboutUsContent;
+  public aboutUsTitle;
+  public chefContent;
+  public chefName;
+  public chefPicture;
+  public chefTitle;
+
+  public chefIsDisabled = false;
   constructor(public getData: FrontFetchService, private _sanitizer: DomSanitizer, private titleService: Title) {
     this.getAboutUsContent();
 
@@ -39,6 +46,14 @@ export class AboutComponent implements OnInit {
       this.responseData = result;
       this.parrallaxUrl = this.responseData.imagePath;
       this.aboutUsContent = this.transform(this.responseData.content);
+      this.aboutUsTitle = this.transform(this.responseData.title);
+
+      this.chefTitle = this.transform(this.responseData.chef_title);
+      this.chefContent = this.transform(this.responseData.chef_content);
+      this.chefName = this.transform(this.responseData.chef_name);
+      this.chefPicture = this.responseData.chef_picture;
+
+      this.chefIsDisabled = this.responseData.chefBioStatus;
     }, (err) => {
     });
   }

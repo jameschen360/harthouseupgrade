@@ -22,7 +22,7 @@ export class FooterComponent implements OnInit {
   getHoursOfOperation() {
     this.getData.postData(this.postData, 'hoursOfOperation').then((result) => {
       this.responseData = result;
-      this.hoursOfOperation = this.responseData.hoursOfOperation[0].content;
+      this.hoursOfOperation = this.responseData.hoursOfOperation;
     }, (err) => {
     });
   }

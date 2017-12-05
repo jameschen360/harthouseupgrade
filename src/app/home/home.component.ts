@@ -21,10 +21,10 @@ export class HomeComponent implements OnInit {
   public bannerImages;
   public homeVideo;
   public contentText;
+  public videoDivIsDisabled = false;
   public videoUrl = null;
   public title;
   public iframe_html;
-  public videoContentBlock = false; // initialize video content block as false
 
   constructor(public getData: FrontFetchService, private sanitizer: DomSanitizer,
     private embedService: EmbedVideoService, private titleService: Title) {
@@ -54,12 +54,18 @@ export class HomeComponent implements OnInit {
     this.getData.postData(this.postData, 'homeVideo').then((result) => {
       this.responseData = result;
       this.homeVideo = this.responseData.homeVideo[0];
-      // this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.homeVideo.video_url);
 
       this.iframe_html = this.embedService.embed(this.homeVideo.video_url,
         { query: { portrait: 0, color: '333' }, attr: { width: 640 , height: 360 } });
 
       this.contentText = this.homeVideo.content_text;
+      this.title = this.homeVideo.title;
+
+      if (this.homeVideo.isDisabled === '1') {
+        this.videoDivIsDisabled = true;
+      } else {
+        this.videoDivIsDisabled = false;
+      }
       this.title = this.homeVideo.title;
 
     }, (err) => {

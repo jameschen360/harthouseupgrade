@@ -11,7 +11,6 @@ import { NewsComponent } from './news/news.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { VoucherComponent } from './voucher/voucher.component';
 import { MenuPdfComponent } from './menu/menu-pdf/menu-pdf.component';
-import { GuestComponent } from './guest/guest.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 const appRoutes: Routes = [
@@ -33,7 +32,6 @@ const appRoutes: Routes = [
     { path: 'reservation', component: ReservationComponent },
     { path: 'voucher', component: VoucherComponent },
     { path: 'contactus', component: ContactComponent },
-    { path: 'guest', component: GuestComponent },
     { path: '404', component: NotFoundComponent },
     { path: '**', redirectTo: '404' },
 

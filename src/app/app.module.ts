@@ -22,7 +22,6 @@ import { HomeComponent } from './home/home.component';
 import { MaterialModule } from './material.module';
 import { MenuPdfComponent } from './menu/menu-pdf/menu-pdf.component';
 import { MenuComponent } from './menu/menu.component';
-import { GuestComponent } from './guest/guest.component';
 import { NewsComponent } from './news/news.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { FrontFetchService } from './server/front-fetch.service';
@@ -39,7 +38,6 @@ import { NotFoundComponent } from './not-found/not-found.component';
     AboutComponent,
     HeaderComponent,
     MenuComponent,
-    GuestComponent,
     GalleryComponent,
     NewsComponent,
     CalendarComponent,
