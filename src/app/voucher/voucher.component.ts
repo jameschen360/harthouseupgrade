@@ -143,7 +143,7 @@ export class VoucherComponent implements OnInit {
     this.didPaypalScriptLoad = true;
     return new Promise((resolve, reject) => {
       const scriptElement = document.createElement('script');
-      scriptElement.src = 'https://www.paypalobjects.com/api/checkout.v4.js';
+      scriptElement.src = 'https://www.paypalobjects.com/api/checkout.js';
       scriptElement.onload = resolve;
       document.body.appendChild(scriptElement);
     });
